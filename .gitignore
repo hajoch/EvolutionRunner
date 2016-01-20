@@ -17,3 +17,8 @@
 
 # IntelliJ
 /out/
+
+
+# Project specific files
+
+src/com/hajoch/script/*.tmp
