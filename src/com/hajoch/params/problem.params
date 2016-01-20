@@ -1,0 +1,22 @@
+##INHERITANCE
+parent.0 				= general.params
+parent.1				= bt.params
+
+
+##SIMPLIFIED ENVIRONMENT
+pop.subpop.0.size 		= 1
+generations 			= 1
+
+evalthreads 			= 1
+
+
+##PROBLEM
+eval.problem 			= warlight2.bt_test.BtTest
+
+
+##FUNCTIONS (Strarts at func.8)
+gp.fs.0.size 			= 8
+
+#ACTIONS
+
+#CONDITIONS
