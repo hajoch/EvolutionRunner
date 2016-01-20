@@ -18,11 +18,12 @@ import java.util.List;
  */
 public class SpringProblem extends GPProblem implements SimpleProblemForm {
 
+    // TODO  maybe replace start_time with generation and individual, or of the like
     private final long START_TIME = System.currentTimeMillis();
     // Path to the script that runs Zero-K
-    private final String SCRIPT_URL = "";
+    private final String SCRIPT_URL = "\\script\\runHeadless.bat";
     // Path to where the BehaviourTree individual and gameLog should be saved
-    private final String OUT_URL = "";
+    private final String OUT_URL = "EvolutionRunner\\out\\";
 
     /**
      *
