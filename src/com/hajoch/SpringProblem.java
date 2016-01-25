@@ -81,9 +81,28 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         // Write the console output to file
         writeToFile("out", output);
 
-        // Calculate the fitness //TODO
+        int winner = 0;
+        int teamid = 0;
+        int time = 0;
+        int avgEco = 0;
+        int soldiers = 0;
+        for(String s: output){
+            if(s.contains("game_message: Alliance ")){
+                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ")+9, s.indexOf(" wins")));
+            }
+            if(s.contains("END")){
+                teamid = Integer.parseInt(s.substring(s.indexOf("teamid: ")+8, s.indexOf(" time: ")));
+                time = Integer.parseInt(s.substring(s.indexOf("time: ")+6, s.indexOf(" Soldiers: ")));
+                soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ")+10, s.indexOf(" avgEco: ")));
+                avgEco = Integer.parseInt(s.substring(s.indexOf("avgEco: ")+8, s.length()));
+            }
+        }
 
-        return 0.0d;
+        if(winner == teamid)
+            return 1;
+        else
+            return -1;
+        // Calculate the fitness //TODO
     }
 
     /**
