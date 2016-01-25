@@ -10,6 +10,7 @@ import ec.simple.SimpleProblemForm;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -22,7 +23,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     // Path to the script that runs Zero-K
     private final String SCRIPT_URL = "\\script\\runHeadless.bat";
     // Path to where the BehaviourTree individual and gameLog should be saved
-    private final String OUT_URL = "EvolutionRunner\\out\\";
+    private final String OUT_URL = "out\\";
 
     /**
      *
@@ -37,7 +38,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             BooleanData input = (BooleanData)this.input;
             String treeString = (((GPIndividual)individual).trees[0].child).toString();
             // Write BT individual to text file for the Spring Bot to read and parse
-         //   writeToFile("bt", Collections.singletonList(treeString));
+            writeToFile("bt", Collections.singletonList(treeString));
 
             double f = getFitness();
 
@@ -94,12 +95,13 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
      */
     private boolean writeToFile(String name, List<String> content){
 
-        /*PrintWriter printer;
+        PrintWriter printer;
 
-        File file = new File(new StringBuilder(OUT_URL).append(name).append(START_TIME).append(".txt").toString(), "UTF-8");
+        File file = new File(new StringBuilder(OUT_URL).append(name).append(START_TIME).append(".txt").toString());
         try {
-            file.mkdirs();
-            file.createNewFile();
+            file.getParentFile().mkdirs();
+            if(!file.exists())
+                file.createNewFile();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -112,7 +114,6 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             e.printStackTrace();
             return false;
         }
-        */
         return true;
     }
 }
