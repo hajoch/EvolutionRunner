@@ -13,8 +13,8 @@
 *.iml
 
 ## Directory-based project format:
-.idea/workspace.xml
-.idea/tasks.xml
+.idea/*
+
 
 # IntelliJ
 /out/
