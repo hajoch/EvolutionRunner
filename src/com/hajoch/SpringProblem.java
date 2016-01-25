@@ -10,7 +10,6 @@ import ec.simple.SimpleProblemForm;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -38,7 +37,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             BooleanData input = (BooleanData)this.input;
             String treeString = (((GPIndividual)individual).trees[0].child).toString();
             // Write BT individual to text file for the Spring Bot to read and parse
-            writeToFile("bt", Collections.singletonList(treeString));
+         //   writeToFile("bt", Collections.singletonList(treeString));
 
             double f = getFitness();
 
@@ -49,11 +48,12 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     }
 
     /**
-     * Run game, inturpret results and return fitness.
+     * Run game, interpret results and return fitness.
      * NB: This method is problem specific.
      * @return                  fitness (Kozafirness)
      */
     private double getFitness() {
+
         List<String> output = new ArrayList<>();
 
         String[] cmdArgs = new String[]{"cmd.exe", "/c",
@@ -64,16 +64,19 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             ProcessBuilder builder = new ProcessBuilder(cmdArgs);
             builder.redirectErrorStream(true);
             Process process = builder.start();
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
             // Read console output
             String line;
             while(process.isAlive()) {
                 line = reader.readLine();
-                if(null != line)
+                if(null != line) {
                     output.add(line);
+                }
             }
         } catch (IOException e) { e.printStackTrace(); }
+
 
         // Write the console output to file
         writeToFile("out", output);
@@ -90,19 +93,26 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
      * @return                  returns true if no error occurred during the process
      */
     private boolean writeToFile(String name, List<String> content){
-        PrintWriter printer;
+
+        /*PrintWriter printer;
+
+        File file = new File(new StringBuilder(OUT_URL).append(name).append(START_TIME).append(".txt").toString(), "UTF-8");
         try {
-            printer = new PrintWriter(new StringBuilder(OUT_URL).append(name).append(START_TIME).append(".txt").toString(), "UTF-8");
+            file.mkdirs();
+            file.createNewFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            printer = new PrintWriter(file);
             for(String s : content)
                 printer.write(s+"\n");
             printer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
             return false;
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-            return false;
         }
+        */
         return true;
     }
 }
