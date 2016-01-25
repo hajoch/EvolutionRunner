@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+
 /**
  * Created by Hallvard on 20.01.2016
  */
@@ -21,7 +23,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     // TODO  maybe replace start_time with generation and individual, or of the like
     private final long START_TIME = System.currentTimeMillis();
     // Path to the script that runs Zero-K
-    private final String SCRIPT_URL = "src\\com\\hajoch\\script\\runHeadless.bat";
+    private final String SCRIPT_URL = "src\\com\\hajoch\\script";
     // Path to where the BehaviourTree individual and gameLog should be saved
     private final String OUT_URL = "out\\";
 
@@ -57,7 +59,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
 
         List<String> output = new ArrayList<>();
 
-        String[] cmdArgs = new String[]{"cmd.exe", "/c", SCRIPT_URL};
+        String[] cmdArgs = new String[]{"cmd.exe", "/c",
+                new StringBuilder("cd ").append(SCRIPT_URL).append("&& runHeadless.bat").toString()};
 
         // Start game from  commandline using our custom script.
         try {
