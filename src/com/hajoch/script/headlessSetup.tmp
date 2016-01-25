@@ -1,0 +1,85 @@
+[GAME]
+{
+  OnlyLocal=1;
+  HostPort=0;
+  MyPlayerName=Player;
+  Mapname=Living Lands v2.03;
+  GameType=Zero-K v1.3.12.1;
+  IsHost=1;
+
+  NumPlayers=1;
+  NumUsers=2;
+
+  [modoptions]
+	{
+		minspeed=20;
+	}
+
+  [PLAYER0]
+  {
+     Name=Player;
+     Spectator=1;
+     LobbyID=0;
+     CountryCode=NO;
+     faction=;
+     clan=;
+     clanfull=;
+     level=0;
+     elo=1100;
+     avatar=amgeo;
+     admin=0;
+  }
+  [AI0]
+  {
+    Name=Bot_1;
+    ShortName=GPBTBot;
+    Version=0.1;
+    Team=0;
+    Host=0;
+    IsFromDemo=0;
+    [Options]
+    {
+    }
+  }
+
+  [TEAM0]
+  {
+     TeamLeader=0;
+     AllyTeam=1;
+     Handicap=0;
+  }
+  [AI1]
+  {
+    Name=Bot_2;
+    ShortName=CAI;
+    Version=<not-versioned>;
+    Team=1;
+    Host=0;
+    IsFromDemo=0;
+    [Options]
+    {
+    }
+  }
+
+  [TEAM1]
+  {
+     TeamLeader=0;
+     AllyTeam=0;
+     Handicap=0;
+  }
+
+[ALLYTEAM0]
+{
+     NumAllies=0;
+}
+[ALLYTEAM1]
+{
+     NumAllies=0;
+}
+
+  [MODOPTIONS]
+  {
+    startboxes=return { [0] = { 0.025, 0.865, 0.125, 0.965 }, [1] = { 0.87, 0.035, 0.97, 0.135 }, };
+    commanderTypes=e30=;
+  }
+}
