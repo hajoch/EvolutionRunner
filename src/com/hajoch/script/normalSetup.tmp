@@ -32,7 +32,7 @@
   [AI0]
   {
     Name=Bot_1;
-    ShortName=GPBTBot;
+    ShortName=ZKGPBTAI;
     Version=0.1;
     Team=0;
     Host=0;
@@ -45,7 +45,7 @@
   [TEAM0]
   {
      TeamLeader=0;
-     AllyTeam=1;
+     AllyTeam=0;
      Handicap=0;
   }
   [AI1]
@@ -64,7 +64,7 @@
   [TEAM1]
   {
      TeamLeader=0;
-     AllyTeam=0;
+     AllyTeam=1;
      Handicap=0;
   }
 

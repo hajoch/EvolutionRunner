@@ -18,9 +18,9 @@ eval.problem 			= com.hajoch.SpringProblem
 gp.fs.0.size 			= 10
 
 #ACTIONS
-gp.fs.0.func.8	 		= myjavaai.bt.test.Right
+gp.fs.0.func.8	 		= Right
 gp.fs.0.func.8.nc 		= nc0
-gp.fs.0.func.9	 		= myjavaai.bt.test.Wrong
+gp.fs.0.func.9	 		= Wrong
 gp.fs.0.func.9.nc 		= nc0
 
 #CONDITIONS

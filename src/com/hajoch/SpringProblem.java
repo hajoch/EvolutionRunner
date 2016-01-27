@@ -92,23 +92,27 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         int avgEco = 0;
         int soldiers = 0;
         for (String s : output) {
-            if (s.contains("game_message: Alliance ")) {
-                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins")));
+            if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
+                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
             }
             if (s.contains("END")) {
-                teamid = Integer.parseInt(s.substring(s.indexOf("teamid: ") + 8, s.indexOf(" time: ")));
+                teamid = Integer.parseInt(s.substring(s.indexOf("teamId: ") + 8, s.indexOf(" time: ")));
+                System.out.println("Teamid: " + teamid);
                 time = Integer.parseInt(s.substring(s.indexOf("time: ") + 6, s.indexOf(" Soldiers: ")));
+                System.out.println("Time: " + time);
                 soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ") + 10, s.indexOf(" avgEco: ")));
+                System.out.println("Soldiers: " + soldiers);
                 avgEco = Integer.parseInt(s.substring(s.indexOf("avgEco: ") + 8, s.length()));
+                System.out.println("avgEco: " + avgEco);
             }
         }
 
         if (winner == teamid) {
-            System.out.println("We won" + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
+            System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
             return 1;
         } else {
-            System.out.println("We lost" + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
-            return -1;
+            System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
+            return 0;
         }
         // Calculate the fitness //TODO
     }

@@ -2,6 +2,7 @@ gp.fs.size 				= 1
 gp.fs.0 				= ec.gp.GPFunctionSet
 gps.fs.0.name 			= f0
 
+#//todo fix variable amount of children
 #COMPOSITE
 gp.fs.0.func.0		 	= bt.composite.Sequence
 gp.fs.0.func.0.nc 		= nc3
