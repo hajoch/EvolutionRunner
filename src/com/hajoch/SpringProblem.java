@@ -39,7 +39,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             BooleanData input = (BooleanData) this.input;
             String treeString = (((GPIndividual) individual).trees[0].child).toString();
             // Write BT individual to text file for the Spring Bot to read and parse
-            writeToFile("bt", Collections.singletonList(treeString));
+            writeToFile("tree", Collections.singletonList(treeString));
 
             double f = getFitness();
 
@@ -84,7 +84,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
 
 
         // Write the console output to file
-        writeToFile("out", output);
+        writeToFile("out"+START_TIME, output);
 
         int winner = 0;
         int teamid = 0;
@@ -128,7 +128,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
 
         PrintWriter printer;
 
-        File file = new File(new StringBuilder(OUT_URL).append(name).append(START_TIME).append(".txt").toString());
+        File file = new File(new StringBuilder(OUT_URL).append(name).append(".txt").toString());
         try {
             file.getParentFile().mkdirs();
             if (!file.exists())

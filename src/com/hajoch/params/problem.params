@@ -15,12 +15,16 @@ eval.problem 			= com.hajoch.SpringProblem
 
 
 ##FUNCTIONS (Strarts at func.8)
-gp.fs.0.size 			= 10
+gp.fs.0.size 			= 11
 
 #ACTIONS
-gp.fs.0.func.8	 		= Right
+gp.fs.0.func.7	 		= ZKGPBTAI.bt.actions.Offensive
+gp.fs.0.func.7.nc 		= nc0
+gp.fs.0.func.8	 		= ZKGPBTAI.bt.actions.Defensive
 gp.fs.0.func.8.nc 		= nc0
-gp.fs.0.func.9	 		= Wrong
-gp.fs.0.func.9.nc 		= nc0
 
 #CONDITIONS
+gp.fs.0.func.9	 		= ZKGPBTAI.bt.conditions.HasArmy
+gp.fs.0.func.9.nc 		= nc0
+gp.fs.0.func.10	 		= ZKGPBTAI.bt.conditions.HasEco
+gp.fs.0.func.10.nc 		= nc0
