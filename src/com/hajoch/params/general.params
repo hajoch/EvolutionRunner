@@ -97,17 +97,151 @@ checkpoint-prefix                       = 	    ec
 
 #==========Statistics============
 
-#==========Types==================
-gp.type.a.size                          =       1
-gp.type.a.0.name                        =       nil
-gp.type.s.size                          =       0
+#==========Types=================
+gp.type.a.size                          =       9
+gp.type.a.0.name                        =       condition
+gp.type.a.1.name                        =       action
+gp.type.a.2.name                        =       sequence
+gp.type.a.3.name                        =       selector
+gp.type.a.4.name                        =       untilFail
+gp.type.a.5.name                        =       untilSucceed
+gp.type.a.6.name                        =       inverter
+gp.type.a.7.name                        =       failer
+gp.type.a.8.name                        =       succeeder
+
+
+#==========Sets=================
+gp.type.s.size                          =       12
+
+gp.type.s.0.name                        =       allExceptAction
+gp.type.s.0.size                        =       8
+gp.type.s.0.member.0                    =       condition
+gp.type.s.0.member.1                    =       sequence
+gp.type.s.0.member.2                    =       selector
+gp.type.s.0.member.3                    =       untilFail
+gp.type.s.0.member.4                    =       untilSucceed
+gp.type.s.0.member.5                    =       inverter
+gp.type.s.0.member.6                    =       failer
+gp.type.s.0.member.7                    =       succeeder
+
+gp.type.s.1.name                        =       any
+gp.type.s.1.size                        =       9
+gp.type.s.1.member.0                    =       condition
+gp.type.s.1.member.1                    =       sequence
+gp.type.s.1.member.2                    =       selector
+gp.type.s.1.member.3                    =       action
+gp.type.s.1.member.4                    =       untilFail
+gp.type.s.1.member.5                    =       untilSucceed
+gp.type.s.1.member.6                    =       inverter
+gp.type.s.1.member.7                    =       failer
+gp.type.s.1.member.8                    =       succeeder
+
+gp.type.s.2.name                        =       allExceptSequenceAction
+gp.type.s.2.size                        =       7
+gp.type.s.2.member.0                    =       condition
+gp.type.s.2.member.1                    =       selector
+gp.type.s.2.member.2                    =       untilFail
+gp.type.s.2.member.3                    =       untilSucceed
+gp.type.s.2.member.4                    =       inverter
+gp.type.s.2.member.5                    =       failer
+gp.type.s.2.member.6                    =       succeeder
+
+gp.type.s.3.name                        =       allExceptSelector
+gp.type.s.3.size                        =       8
+gp.type.s.3.member.0                    =       condition
+gp.type.s.3.member.1                    =       sequence
+gp.type.s.3.member.2                    =       action
+gp.type.s.3.member.3                    =       untilFail
+gp.type.s.3.member.4                    =       untilSucceed
+gp.type.s.3.member.5                    =       inverter
+gp.type.s.3.member.6                    =       failer
+gp.type.s.3.member.7                    =       succeeder
+
+gp.type.s.4.name                        =       allExceptActionCondition
+gp.type.s.4.size                        =       7
+gp.type.s.4.member.0                    =       selector
+gp.type.s.4.member.1                    =       sequence
+gp.type.s.4.member.2                    =       untilFail
+gp.type.s.4.member.3                    =       untilSucceed
+gp.type.s.4.member.4                    =       inverter
+gp.type.s.4.member.5                    =       failer
+gp.type.s.4.member.6                    =       succeeder
+
+gp.type.s.5.name                        =       allExceptUntilFailUntilSucceed
+gp.type.s.5.size                        =       7
+gp.type.s.5.member.0                    =       selector
+gp.type.s.5.member.1                    =       action
+gp.type.s.5.member.2                    =       sequence
+gp.type.s.5.member.3                    =       inverter
+gp.type.s.5.member.4                    =       failer
+gp.type.s.5.member.5                    =       succeeder
+gp.type.s.5.member.6                    =       condition
+
+gp.type.s.6.name                        =       decorator
+gp.type.s.6.size                        =       5
+gp.type.s.6.member.0                    =       untilFail
+gp.type.s.6.member.1                    =       untilSucceed
+gp.type.s.6.member.2                    =       inverter
+gp.type.s.6.member.3                    =       failer
+gp.type.s.6.member.4                    =       succeeder
+
+gp.type.s.7.name                        =       allExceptInverter
+gp.type.s.7.size                        =       8
+gp.type.s.7.member.0                    =       selector
+gp.type.s.7.member.1                    =       action
+gp.type.s.7.member.2                    =       sequence
+gp.type.s.7.member.3                    =       untilFail
+gp.type.s.7.member.4                    =       failer
+gp.type.s.7.member.5                    =       succeeder
+gp.type.s.7.member.6                    =       condition
+gp.type.s.7.member.7                    =       untilSucceed
+
+gp.type.s.8.name                        =       allExceptSucceeder
+gp.type.s.8.size                        =       8
+gp.type.s.8.member.0                    =       selector
+gp.type.s.8.member.1                    =       action
+gp.type.s.8.member.2                    =       sequence
+gp.type.s.8.member.3                    =       untilFail
+gp.type.s.8.member.4                    =       failer
+gp.type.s.8.member.5                    =       inverter
+gp.type.s.8.member.6                    =       condition
+gp.type.s.8.member.7                    =       untilSucceed
+
+gp.type.s.9.name                        =       allExceptFailer
+gp.type.s.9.size                        =       8
+gp.type.s.9.member.0                    =       selector
+gp.type.s.9.member.1                    =       action
+gp.type.s.9.member.2                    =       sequence
+gp.type.s.9.member.3                    =       untilFail
+gp.type.s.9.member.4                    =       inverter
+gp.type.s.9.member.5                    =       succeeder
+gp.type.s.9.member.6                    =       condition
+gp.type.s.9.member.7                    =       untilSucceed
+
+gp.type.s.10.name                       =       allExceptUntilFailUntilSucceedFailer
+gp.type.s.10.size                       =       6
+gp.type.s.10.member.0                   =       selector
+gp.type.s.10.member.1                   =       action
+gp.type.s.10.member.2                   =       sequence
+gp.type.s.10.member.3                   =       inverter
+gp.type.s.10.member.4                   =       succeeder
+gp.type.s.10.member.5                   =       condition
+
+gp.type.s.11.name                       =       allExceptUntilFailUntilSucceedSucceeder
+gp.type.s.11.size                       =       6
+gp.type.s.11.member.0                   =       selector
+gp.type.s.11.member.1                   =       action
+gp.type.s.11.member.2                   =       sequence
+gp.type.s.11.member.3                   =       inverter
+gp.type.s.11.member.4                   =       failer
+gp.type.s.11.member.5                   =       condition
 
 #==========Tree Constraints=====
 gp.tc.size                              =       1
 gp.tc.0                                 =       ec.gp.GPTreeConstraints
 gp.tc.0.name                            =       tc0
 gp.tc.0.fset                            =       f0
-gp.tc.0.returns                         =       nil
+gp.tc.0.returns                         =       allExceptActionCondition
 
 #==========Tree builder=========
 gp.tc.0.init                            =       ec.gp.koza.HalfBuilder
@@ -117,63 +251,123 @@ gp.koza.half.max-depth                  =       10
 gp.koza.half.growp                      =       0.5
 
 #==========Node Constraints=====
-gp.nc.size                              =       7
+gp.nc.size                              =       17
 
 gp.nc.0                                 =       ec.gp.GPNodeConstraints
 gp.nc.0.name                            =       nc0
-gp.nc.0.returns                         =       nil
+gp.nc.0.returns                         =       any
 gp.nc.0.size                            =       0
 
 gp.nc.1                                 =       ec.gp.GPNodeConstraints
 gp.nc.1.name                            =       nc1
-gp.nc.1.returns                         =       nil
+gp.nc.1.returns                         =       any
 gp.nc.1.size                            =       1
-gp.nc.1.child.0                         =       nil
+gp.nc.1.child.0                         =       any
 
 gp.nc.2                                 =       ec.gp.GPNodeConstraints
 gp.nc.2.name                            =       nc2
-gp.nc.2.returns                         =       nil
+gp.nc.2.returns                         =       any
 gp.nc.2.size                            =       2
-gp.nc.2.child.0                         =       nil
-gp.nc.2.child.1                         =       nil
+gp.nc.2.child.0                         =       any
+gp.nc.2.child.1                         =       any
 
 gp.nc.3                                 =       ec.gp.GPNodeConstraints
 gp.nc.3.name                            =       nc3
-gp.nc.3.returns                         =       nil
+gp.nc.3.returns                         =       any
 gp.nc.3.size                            =       3
-gp.nc.3.child.0                         =       nil
-gp.nc.3.child.1                         =       nil
-gp.nc.3.child.2                         =       nil
+gp.nc.3.child.0                         =       any
+gp.nc.3.child.1                         =       any
+gp.nc.3.child.2                         =       any
 
 gp.nc.4                                 =       ec.gp.GPNodeConstraints
 gp.nc.4.name                            =       nc4
-gp.nc.4.returns                         =       nil
+gp.nc.4.returns                         =       any
 gp.nc.4.size                            =       4
-gp.nc.4.child.0                         =       nil
-gp.nc.4.child.1                         =       nil
-gp.nc.4.child.2                         =       nil
-gp.nc.4.child.3                         =       nil
+gp.nc.4.child.0                         =       any
+gp.nc.4.child.1                         =       any
+gp.nc.4.child.2                         =       any
+gp.nc.4.child.3                         =       any
 
 gp.nc.5                                 =       ec.gp.GPNodeConstraints
 gp.nc.5.name                            =       nc5
-gp.nc.5.returns                         =       nil
+gp.nc.5.returns                         =       any
 gp.nc.5.size                            =       5
-gp.nc.5.child.0                         =       nil
-gp.nc.5.child.1                         =       nil
-gp.nc.5.child.2                         =       nil
-gp.nc.5.child.3                         =       nil
-gp.nc.5.child.4                         =       nil
+gp.nc.5.child.0                         =       any
+gp.nc.5.child.1                         =       any
+gp.nc.5.child.2                         =       any
+gp.nc.5.child.3                         =       any
+gp.nc.5.child.4                         =       any
 
 gp.nc.6                                 =       ec.gp.GPNodeConstraints
-gp.nc.6.name                            =       nc6
-gp.nc.6.returns                         =       nil
-gp.nc.6.size                            =       6
-gp.nc.6.child.0                         =       nil
-gp.nc.6.child.1                         =       nil
-gp.nc.6.child.2                         =       nil
-gp.nc.6.child.3                         =       nil
-gp.nc.6.child.4                         =       nil
-gp.nc.6.child.5                         =       nil
+gp.nc.6.name                            =       nc6_fixed_sequence_4
+gp.nc.6.returns                         =       sequence
+gp.nc.6.size                            =       4
+gp.nc.6.child.0                         =       allExceptSequenceAction
+gp.nc.6.child.1                         =       allExceptSequenceAction
+gp.nc.6.child.2                         =       allExceptSequenceAction
+gp.nc.6.child.3                         =       action
+
+gp.nc.7                                 =       ec.gp.GPNodeConstraints
+gp.nc.7.name                            =       nc7_fixed_sequence
+gp.nc.7.returns                         =       sequence
+gp.nc.7.size                            =       3
+gp.nc.7.child.0                         =       allExceptSequenceAction
+gp.nc.7.child.1                         =       allExceptSequenceAction
+gp.nc.7.child.2                         =       action
+
+gp.nc.8                                 =       ec.gp.GPNodeConstraints
+gp.nc.8.name                            =       nc8_action
+gp.nc.8.returns                         =       action
+gp.nc.8.size                            =       0
+
+gp.nc.9                                 =       ec.gp.GPNodeConstraints
+gp.nc.9.name                            =       nc9_condition
+gp.nc.9.returns                         =       condition
+gp.nc.9.size                            =       0
+
+gp.nc.10                                =       ec.gp.GPNodeConstraints
+gp.nc.10.name                           =       nc10_fixed_selector
+gp.nc.10.returns                        =       selector
+gp.nc.10.size                           =       3
+gp.nc.10.child.0                        =       allExceptSelector
+gp.nc.10.child.1                        =       allExceptSelector
+gp.nc.10.child.2                        =       allExceptSelector
+
+gp.nc.11                                =       ec.gp.GPNodeConstraints
+gp.nc.11.name                           =       nc11_decorator
+gp.nc.11.returns                        =       decorator
+gp.nc.11.size                           =       1
+gp.nc.11.child.0                        =       any
+
+gp.nc.12                                =       ec.gp.GPNodeConstraints
+gp.nc.12.name                           =       nc12_untilFail
+gp.nc.12.returns                        =       untilFail
+gp.nc.12.size                           =       1
+gp.nc.12.child.0                        =       allExceptUntilFailUntilSucceedSucceeder
+
+gp.nc.13                                =       ec.gp.GPNodeConstraints
+gp.nc.13.name                           =       nc13_untilSucceed
+gp.nc.13.returns                        =       untilSucceed
+gp.nc.13.size                           =       1
+gp.nc.13.child.0                        =       allExceptUntilFailUntilSucceedFailer
+
+gp.nc.14                                =       ec.gp.GPNodeConstraints
+gp.nc.14.name                           =       nc14_inverter
+gp.nc.14.returns                        =       inverter
+gp.nc.14.size                           =       1
+gp.nc.14.child.0                        =       allExceptInverter
+
+gp.nc.15                                =       ec.gp.GPNodeConstraints
+gp.nc.15.name                           =       nc15_succeeder
+gp.nc.15.returns                        =       succeeder
+gp.nc.15.size                           =       1
+gp.nc.15.child.0                        =       allExceptSucceeder
+
+gp.nc.16                                =       ec.gp.GPNodeConstraints
+gp.nc.16.name                           =       nc16_failer
+gp.nc.16.returns                        =       failer
+gp.nc.16.size                           =       1
+gp.nc.16.child.0                        =       allExceptFailer
 
 #==========ADFs=================
 gp.problem.stack                        =       ec.gp.ADFStack
