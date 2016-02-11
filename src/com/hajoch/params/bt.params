@@ -5,21 +5,27 @@ gps.fs.0.name 			= f0
 #//todo fix variable amount of children
 #COMPOSITE
 gp.fs.0.func.0		 	= bt.composite.Sequence
-gp.fs.0.func.0.nc 		= nc6_fixed_sequence_4
+gp.fs.0.func.0.nc 		= nc1_fixed_sequence
 gp.fs.0.func.1 			= bt.composite.Selector
-gp.fs.0.func.1.nc 		= nc10_fixed_selector
+gp.fs.0.func.1.nc 		= nc4_fixed_selector
+gp.fs.0.func.2 			= bt.composite.Selector
+gp.fs.0.func.2.nc 		= nc11_ifSelector
+gp.fs.0.func.3 			= bt.composite.Selector
+gp.fs.0.func.3.nc 		= nc12_ifElseSelector
 
 #DECORATOR
-gp.fs.0.func.2 			= bt.decorator.Inverter
-gp.fs.0.func.2.nc 		= nc14_inverter
-gp.fs.0.func.3 			= bt.decorator.Succeeder
-gp.fs.0.func.3.nc 		= nc15_succeeder
-gp.fs.0.func.4	 		= bt.decorator.Failer
-gp.fs.0.func.4.nc 		= nc16_failer
-gp.fs.0.func.5 			= bt.decorator.UntilFail
-gp.fs.0.func.5.nc 		= nc12_untilFail
-gp.fs.0.func.6	 		= bt.decorator.UntilSucceed
-gp.fs.0.func.6.nc 		= nc13_untilSucceed
+gp.fs.0.func.4 			= bt.decorator.Inverter
+gp.fs.0.func.4.nc 		= nc13_ifElseInverter
+gp.fs.0.func.5 			= bt.decorator.Inverter
+gp.fs.0.func.5.nc 		= nc8_inverter
+gp.fs.0.func.6 			= bt.decorator.Succeeder
+gp.fs.0.func.6.nc 		= nc9_succeeder
+gp.fs.0.func.7	 		= bt.decorator.Failer
+gp.fs.0.func.7.nc 		= nc10_failer
+gp.fs.0.func.8 			= bt.decorator.UntilFail
+gp.fs.0.func.8.nc 		= nc6_untilFail
+gp.fs.0.func.9	 		= bt.decorator.UntilSucceed
+gp.fs.0.func.9.nc 		= nc7_untilSucceed
 
 
 #stats
