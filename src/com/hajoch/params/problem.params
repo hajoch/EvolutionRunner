@@ -2,16 +2,25 @@
 parent.0 				= general.params
 parent.1				= bt.params
 
+#==========Init===================
+finish                                  =       com.hajoch.Finisher
+
+#==========Checkpointing==========
+checkpoint                              =       true
+checpoint-modulo                        =       1
+checkpoint-directory                    =       /checkpoints/
+
 
 ##SIMPLIFIED ENVIRONMENT
 pop.subpop.0.size 		= 1
-generations 			= 1
+generations 			= 2
 
 evalthreads 			= 1
 
 
 ##PROBLEM
 eval.problem 			= com.hajoch.SpringProblem
+
 
 
 ##FUNCTIONS (Strarts at func.8)

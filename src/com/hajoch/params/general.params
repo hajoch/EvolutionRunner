@@ -5,7 +5,7 @@ ec.Evolve
 #==========Init===================
 state                                   =       ec.simple.SimpleEvolutionState
 init                                    =       ec.gp.GPInitializer
-finish                                  =       ec.simple.SimpleFinisher
+finish                                  =       com.hajoch.Finisher
 exch                                    =       ec.simple.SimpleExchanger
 breed                                   =       ec.simple.SimpleBreeder
 eval                                    =       ec.simple.SimpleEvaluator

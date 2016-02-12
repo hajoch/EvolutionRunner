@@ -1,5 +1,6 @@
 package com.hajoch;
 
+import ZKGPBTAI.utils.*;
 import bt.utils.BooleanData;
 import ec.EvolutionState;
 import ec.Individual;
@@ -47,6 +48,11 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             fitness.setStandardizedFitness(evolutionState, f);
             individual.evaluated = true;
         }
+
+/*        if(evolutionState.generation == evolutionState.numGenerations-1){
+            System.out.println("archiving");
+            Utility.archiveCheckpoints();
+        }*/
     }
 
     // Start game from  commandline using our custom script.
@@ -158,4 +164,5 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         }
         return true;
     }
+
 }
