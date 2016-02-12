@@ -1,4 +1,4 @@
-package statistics;
+package com.hajoch.statistics;
 
 import ec.*;
 import ec.gp.GPIndividual;
@@ -6,14 +6,10 @@ import ec.gp.GPNode;
 import ec.gp.koza.KozaFitness;
 import ec.simple.SimpleProblemForm;
 import ec.steadystate.SteadyStateStatisticsForm;
-import ec.util.Output;
 import ec.util.Parameter;
-import org.jfree.io.FileUtilities;
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.Timestamp;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -159,10 +155,10 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         avgSizePerGen.add(avgSize);
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
         printer.write("Average fitness: " + avgFitness + " Average size: " + avgSize);
-        ResultsSingleton.setNodeOcc(nodeUsage);
+/*        ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
-        ResultsSingleton.drawChart(runName, false);
+        ResultsSingleton.drawChart(runName, false);*/
         writePopulation(state.population.subpops[0].individuals, state);
     }
 
@@ -200,7 +196,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
                 ((SimpleProblemForm) (state.evaluator.p_problem.clone())).describe(state, best_of_run[x], x, 0, statisticslog);
         }
 
-        ResultsSingleton.drawChart(runName, true);
+        /*ResultsSingleton.drawChart(runName, true);*/
         printer.close();
     }
 }

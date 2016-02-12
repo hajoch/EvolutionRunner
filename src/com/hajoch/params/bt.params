@@ -23,7 +23,7 @@ gp.fs.0.func.6.nc 		= nc13_untilSucceed
 
 
 #stats
-stat 					= statistics.TabularStats
+stat 					= com.hajoch.statistics.TabularStats
 stat.do-size 			= true
 stat.do-time 			= true
 
