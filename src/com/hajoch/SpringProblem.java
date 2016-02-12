@@ -49,6 +49,32 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         }
     }
 
+    // Start game from  commandline using our custom script.
+    public List<String> runZerok() throws IOException{
+        List<String> output = new ArrayList<>();
+
+        String[] cmdArgs = new String[]{"cmd.exe", "/c",
+                new StringBuilder("cd ").append(SCRIPT_URL).append("&& runHeadless.bat").toString()};
+
+
+        ProcessBuilder builder = new ProcessBuilder(cmdArgs);
+        builder.redirectErrorStream(true);
+        Process process = builder.start();
+
+        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+        // Read console output
+        String line;
+        while (process.isAlive()) {
+            line = reader.readLine();
+            if (null != line) {
+                output.add(line);
+            }
+        }
+
+        return output;
+    }
+
     /**
      * Run game, interpret results and return fitness.
      * NB: This method is problem specific.
@@ -56,32 +82,17 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
      * @return fitness (Kozafirness)
      */
     private double getFitness() {
-
         List<String> output = new ArrayList<>();
 
-        String[] cmdArgs = new String[]{"cmd.exe", "/c",
-                new StringBuilder("cd ").append(SCRIPT_URL).append("&& runHeadless.bat").toString()};
-
-        // Start game from  commandline using our custom script.
-        try {
-            ProcessBuilder builder = new ProcessBuilder(cmdArgs);
-            builder.redirectErrorStream(true);
-            Process process = builder.start();
-
-            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-            // Read console output
-            String line;
-            while (process.isAlive()) {
-                line = reader.readLine();
-                if (null != line) {
-                    output.add(line);
-                }
+        boolean running = true;
+        while(running) {
+            try {
+                output = runZerok();
+                running = false;
+            } catch (IOException e) {
+                System.out.println("zero K crashed. Restarting");
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
-
 
         // Write the console output to file
         writeToFile("out"+START_TIME, output);
