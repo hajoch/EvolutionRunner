@@ -21,3 +21,6 @@
 
 
 # Project specific files
+
+#ECJ checkpoint files
+*.gz
