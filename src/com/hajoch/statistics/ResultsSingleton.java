@@ -1,7 +1,7 @@
-package statistics;
+package com.hajoch.statistics;
 
-import visualisation.PopFitVsSizeChart;
-import visualisation.TerminalVsFitChart;
+import com.hajoch.visualization.PopFitVsSizeChart;
+import com.hajoch.visualization.TerminalVsFitChart;
 
 import java.util.ArrayList;
 import java.util.HashMap;

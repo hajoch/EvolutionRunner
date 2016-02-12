@@ -1,12 +1,12 @@
 package com.hajoch.visualization;
 
+import com.hajoch.statistics.ResultsSingleton;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.xy.XYLineAndShapeRenderer;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
-import statistics.ResultsSingleton;
 
 import javax.swing.*;
 import java.awt.*;

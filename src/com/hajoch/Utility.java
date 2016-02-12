@@ -28,13 +28,12 @@ public final class Utility {
         }
     }
 
-    public static void archiveCheckpoints() {
-        long archiveTime = System.currentTimeMillis();
-        File folder = new File("src\\com\\hajoch\\params\\checkpoints\\");
+    public static void archiveCheckpoints(String storagePath) {
+        File folder = new File("src\\com\\hajoch\\checkpoints\\");
         ArrayList<File> files = listFilesForFolder(folder);
 
         try {
-            File dir = new File("src\\com\\hajoch\\params\\checkpoints\\" + "run_" + archiveTime);
+            File dir = new File(storagePath);
             dir.mkdir();
             for (File f : files) {
                 moveFile(f, dir);

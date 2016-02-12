@@ -18,13 +18,13 @@ public class Main {
             if (checkpoint.equals("")) {
                 Evolve.main(params);
             } else {
-                String[] fromCheckpoint = new String[]{"-checkpoint", "src\\com\\hajoch\\params\\checkpoints\\" + checkpoint};
+                String[] fromCheckpoint = new String[]{"-checkpoint", "src\\com\\hajoch\\checkpoints\\" + checkpoint};
                 Evolve.main(fromCheckpoint);
             }
     }
 
     public static String getLatestCheckpoint() {
-        File folder = new File("src\\com\\hajoch\\params\\checkpoints\\");
+        File folder = new File("src\\com\\hajoch\\checkpoints\\");
         ArrayList<File> files = Utility.listFilesForFolder(folder);
 
         String output = "";

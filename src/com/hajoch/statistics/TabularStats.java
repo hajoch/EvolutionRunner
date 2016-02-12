@@ -1,5 +1,6 @@
 package com.hajoch.statistics;
 
+import com.hajoch.Utility;
 import ec.*;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
@@ -155,10 +156,10 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         avgSizePerGen.add(avgSize);
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
         printer.write("Average fitness: " + avgFitness + " Average size: " + avgSize);
-/*        ResultsSingleton.setNodeOcc(nodeUsage);
+        ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
-        ResultsSingleton.drawChart(runName, false);*/
+        ResultsSingleton.drawChart(runName, false);
         writePopulation(state.population.subpops[0].individuals, state);
     }
 
@@ -196,7 +197,10 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
                 ((SimpleProblemForm) (state.evaluator.p_problem.clone())).describe(state, best_of_run[x], x, 0, statisticslog);
         }
 
-        /*ResultsSingleton.drawChart(runName, true);*/
+        ResultsSingleton.drawChart(runName, true);
         printer.close();
+
+        //archive checkpoints
+        Utility.archiveCheckpoints(".\\runs\\" + runName + "\\checkpoints");
     }
 }

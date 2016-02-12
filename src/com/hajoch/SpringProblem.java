@@ -48,11 +48,6 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             fitness.setStandardizedFitness(evolutionState, f);
             individual.evaluated = true;
         }
-
-/*        if(evolutionState.generation == evolutionState.numGenerations-1){
-            System.out.println("archiving");
-            Utility.archiveCheckpoints();
-        }*/
     }
 
     // Start game from  commandline using our custom script.

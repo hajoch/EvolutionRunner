@@ -5,7 +5,7 @@ ec.Evolve
 #==========Init===================
 state                                   =       ec.simple.SimpleEvolutionState
 init                                    =       ec.gp.GPInitializer
-finish                                  =       com.hajoch.Finisher
+finish                                  =       ec.simple.SimpleFinisher
 exch                                    =       ec.simple.SimpleExchanger
 breed                                   =       ec.simple.SimpleBreeder
 eval                                    =       ec.simple.SimpleEvaluator
@@ -96,6 +96,10 @@ checkpoint-modulo                       =       1
 checkpoint-prefix                       = 	    ec
 
 #==========Statistics============
+stat 					= com.hajoch.statistics.TabularStats
+stat.do-size 			= true
+stat.do-time 			= true
+stat.file               = out
 
 #==========Types=================
 gp.type.a.size                          =       9

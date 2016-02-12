@@ -2,17 +2,14 @@
 parent.0 				= general.params
 parent.1				= bt.params
 
-#==========Init===================
-finish                                  =       com.hajoch.Finisher
-
 #==========Checkpointing==========
 checkpoint                              =       true
 checpoint-modulo                        =       1
-checkpoint-directory                    =       /checkpoints/
+checkpoint-directory                    =       ..//checkpoints
 
 
 ##SIMPLIFIED ENVIRONMENT
-pop.subpop.0.size 		= 1
+pop.subpop.0.size 		= 2
 generations 			= 2
 
 evalthreads 			= 1
