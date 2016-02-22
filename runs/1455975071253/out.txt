@@ -1,0 +1,659 @@
+
+Generation: 0
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.919 Adjusted=0.5211047420531527 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                 (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 1
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.915 Adjusted=0.5221932114882506 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+         (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+             (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                 (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                 buildLotus) (untilSucceed(buildGauss) buildGauss)
+                 buildGauss))) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                 (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 2
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9115 Adjusted=0.5231493591420351 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                 (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 3
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9065 Adjusted=0.5245213742460005 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]), untilFail(inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss)) (untilFail(inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss]))
+             (inverter(selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss])
+                 (selector[buildStorage, untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildGauss]
+                     buildStorage (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+                     (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                         (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                         buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                         highEnergy highMetal lowMetal buildFactory)))
+                     buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                 (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 4
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.39949999999999997 Adjusted=0.7145409074669525 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss]))
+         (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])
+             (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss]
+                 (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                 buildLotus) (untilSucceed(inverter(buildSolar))
+                 (inverter(buildSolar) buildSolar)) buildGauss)))
+         (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+             (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+                 (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                     (untilFail(failer(lowMetal)) (failer(lowMetal)
+                         lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                     (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                     (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                     highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                     buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 5
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.39949999999999997 Adjusted=0.7145409074669525 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss]))
+         (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss])
+             (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(inverter(buildSolar)), buildGauss]
+                 (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                 buildLotus) (untilSucceed(inverter(buildSolar))
+                 (inverter(buildSolar) buildSolar)) buildGauss)))
+         (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+             (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+                 (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                     (untilFail(failer(lowMetal)) (failer(lowMetal)
+                         lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                     (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                     (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                     highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                     buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 6
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9025 Adjusted=0.5256241787122208 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 7
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.8985 Adjusted=0.5267316302343956 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss])
+                 (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                     (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                     highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                     buildSolar buildMex buildLotus) buildGauss))
+                 (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                     (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                     highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                     buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 8
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9025 Adjusted=0.5256241787122208 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 9
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.898 Adjusted=0.5268703898840885 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), buildLotus])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), buildLotus]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss])
+                 (selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]
+                     (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+                         (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                             (untilFail(failer(lowMetal)) (failer(lowMetal)
+                                 lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                             (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                             (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                             highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                             buildSolar buildMex buildLotus) buildGauss)))
+                     highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) buildLotus))
+
+Generation: 10
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.898 Adjusted=0.5268703898840885 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), buildLotus])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), buildLotus]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss])
+                 (selector[untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]), highMetal, buildGauss]
+                     (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+                         (selector[untilFail(failer(lowMetal)), untilSucceed(succeeder(lowEnergy)), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                             (untilFail(failer(lowMetal)) (failer(lowMetal)
+                                 lowMetal)) (untilSucceed(succeeder(lowEnergy))
+                             (succeeder(lowEnergy) lowEnergy)) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                             (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                             highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                             buildSolar buildMex buildLotus) buildGauss)))
+                     highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) buildLotus))
+
+Generation: 11
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.893 Adjusted=0.5282620179609087 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(buildGauss), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(buildGauss), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss])
+                 (selector[buildStorage, sequence[highEnergy, highMetal, lowMetal, buildFactory], buildGauss]
+                     buildStorage (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                     highEnergy highMetal lowMetal buildFactory)
+                     buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(buildGauss), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]]))
+         (untilFail(selector[untilFail(buildGauss), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]])
+             (selector[untilFail(buildGauss), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]]
+                 (untilFail(buildGauss) buildGauss) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), succeeder(untilSucceed(buildLotus)), buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (succeeder(untilSucceed(buildLotus))
+                 (untilSucceed(buildLotus) buildLotus)) buildGauss))))))
+
+Generation: 12
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9025 Adjusted=0.5256241787122208 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 13
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.9025 Adjusted=0.5256241787122208 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, buildLotus], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, buildLotus]
+                 buildSolar buildMex buildLotus) buildGauss))))))
+
+Generation: 14
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.896 Adjusted=0.5274261603375527 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])]
+                 buildSolar buildMex (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss))) buildGauss))))))
+
+Generation: 15
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.896 Adjusted=0.5274261603375527 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])]
+                 buildSolar buildMex (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss))) buildGauss))))))
+
+Generation: 16
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.896 Adjusted=0.5274261603375527 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])]
+                 buildSolar buildMex (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss))) buildGauss))))))
+
+Generation: 17
+Best Individual:
+Subpopulation 0:
+Evaluated: true
+Fitness: Standardized=0.896 Adjusted=0.5274261603375527 Hits=0
+Tree 0:
+ (untilFail(selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))])
+     (selector[succeeder(failer(inverter(succeeder(untilSucceed(buildLotus))))), untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]), failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))]
+         (succeeder(failer(inverter(succeeder(untilSucceed(buildLotus)))))
+             (failer(inverter(succeeder(untilSucceed(buildLotus))))
+                 (inverter(succeeder(untilSucceed(buildLotus)))
+                     (succeeder(untilSucceed(buildLotus)) (untilSucceed(buildLotus)
+                         buildLotus))))) (untilSucceed(sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex])
+         (sequence[inverter(selector[buildStorage, highMetal, buildGauss]), untilFail(inverter(selector[buildStorage, highMetal, buildGauss])), untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]), buildMex]
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss)) (untilFail(inverter(selector[buildStorage, highMetal, buildGauss]))
+             (inverter(selector[buildStorage, highMetal, buildGauss])
+                 (selector[buildStorage, highMetal, buildGauss]
+                     buildStorage highMetal buildGauss))) (untilSucceed(selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]])
+             (selector[inverter(buildSolar), succeeder(buildSolar), sequence[highEnergy, highMetal, lowMetal, buildFactory]]
+                 (inverter(buildSolar) buildSolar) (succeeder(buildSolar)
+                 buildSolar) (sequence[highEnergy, highMetal, lowMetal, buildFactory]
+                 highEnergy highMetal lowMetal buildFactory)))
+             buildMex)) (failer(untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]))
+         (untilFail(selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]])
+             (selector[untilFail(failer(lowMetal)), untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])), sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]]
+                 (untilFail(failer(lowMetal)) (failer(lowMetal)
+                     lowMetal)) (untilSucceed(inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]))
+                 (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                     (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                         (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                         buildLotus) (untilSucceed(buildGauss) buildGauss)
+                         buildGauss))) (sequence[untilFail(highMetal), succeeder(highEnergy), selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])], buildGauss]
+                 (untilFail(highMetal) highMetal) (succeeder(highEnergy)
+                 highEnergy) (selector[buildSolar, buildMex, inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])]
+                 buildSolar buildMex (inverter(sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss])
+                 (sequence[untilSucceed(buildLotus), succeeder(buildLotus), untilSucceed(buildGauss), buildGauss]
+                     (untilSucceed(buildLotus) buildLotus) (succeeder(buildLotus)
+                     buildLotus) (untilSucceed(buildGauss) buildGauss)
+                     buildGauss))) buildGauss))))))

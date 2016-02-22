@@ -109,23 +109,28 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             }
             if (s.contains("END")) {
                 teamid = Integer.parseInt(s.substring(s.indexOf("teamId: ") + 8, s.indexOf(" time: ")));
-                System.out.println("Teamid: " + teamid);
+                //System.out.println("Teamid: " + teamid);
                 time = Integer.parseInt(s.substring(s.indexOf("time: ") + 6, s.indexOf(" Soldiers: ")));
-                System.out.println("Time: " + time);
+                //System.out.println("Time: " + time);
                 soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ") + 10, s.indexOf(" avgEco: ")));
-                System.out.println("Soldiers: " + soldiers);
+                //System.out.println("Soldiers: " + soldiers);
                 avgEco = Integer.parseInt(s.substring(s.indexOf("avgEco: ") + 8, s.length()));
-                System.out.println("avgEco: " + avgEco);
+                //System.out.println("avgEco: " + avgEco);
             }
         }
 
+        double ecoFitness = avgEco/50d;
+        double timeFitness = 0d;
         if (winner == teamid) {
             System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
-            return 1;
+            timeFitness =  1d - (time/1000d);
         } else {
             System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
-            return 0;
+            timeFitness =  0d + (time/1000d);
         }
+
+        System.out.println("Fitness = " + (1d-ecoFitness));
+        return 1d-ecoFitness;
         // Calculate the fitness //TODO
     }
 

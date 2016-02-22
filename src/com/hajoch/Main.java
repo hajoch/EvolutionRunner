@@ -30,7 +30,7 @@ public class Main {
         String output = "";
         int latest = 0;
         for (File f : files) {
-            int temp = Integer.parseInt(f.getName().substring(3, 4));
+            int temp = Integer.parseInt(f.getName().replaceAll("[\\D]", ""));
             if (temp > latest) {
                 latest = temp;
                 output = f.getName();

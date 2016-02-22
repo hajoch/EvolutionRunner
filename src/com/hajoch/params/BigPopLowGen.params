@@ -1,0 +1,4 @@
+#Big Population low Generations
+
+pop.subpop.0.size 		= 100
+generations 			= 10

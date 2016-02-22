@@ -9,28 +9,50 @@ checkpoint-directory                    =       ..//checkpoints
 
 
 ##SIMPLIFIED ENVIRONMENT
-pop.subpop.0.size 		= 2
-generations 			= 2
+pop.subpop.0.size 		= 12
+generations 			= 100
 
 evalthreads 			= 1
-
 
 ##PROBLEM
 eval.problem 			= com.hajoch.SpringProblem
 
-
-
-##FUNCTIONS (Strarts at func.8)
-gp.fs.0.size 			= 11
+#FUNCTIONS (Starts at func.7)
+gp.fs.0.size 			= 18
+#ACTIONS
+#gp.fs.0.func.7	 		= ZKGPBTAI.bt.actions.Offensive
+#gp.fs.0.func.7.nc 		= nc8_action
+#gp.fs.0.func.8	 		= ZKGPBTAI.bt.actions.Defensive
+#gp.fs.0.func.8.nc 		= nc8_action
+#
+##CONDITIONS
+#gp.fs.0.func.9	 		= ZKGPBTAI.bt.conditions.HasArmy
+#gp.fs.0.func.9.nc 		= nc9_condition
+#gp.fs.0.func.10	 	= ZKGPBTAI.bt.conditions.HasEco
+#gp.fs.0.func.10.nc 	= nc9_condition
 
 #ACTIONS
-gp.fs.0.func.7	 		= ZKGPBTAI.bt.actions.Offensive
+gp.fs.0.func.7	 		= ZKGPBTAI.bt.actions.worker.BuildFactory
 gp.fs.0.func.7.nc 		= nc8_action
-gp.fs.0.func.8	 		= ZKGPBTAI.bt.actions.Defensive
+gp.fs.0.func.8	 		= ZKGPBTAI.bt.actions.worker.BuildGauss
 gp.fs.0.func.8.nc 		= nc8_action
+gp.fs.0.func.9	 		= ZKGPBTAI.bt.actions.worker.BuildLotus
+gp.fs.0.func.9.nc 		= nc8_action
+gp.fs.0.func.10	 		= ZKGPBTAI.bt.actions.worker.BuildMex
+gp.fs.0.func.10.nc 		= nc8_action
+gp.fs.0.func.11	 		= ZKGPBTAI.bt.actions.worker.BuildRadar
+gp.fs.0.func.11.nc 		= nc8_action
+gp.fs.0.func.12	 		= ZKGPBTAI.bt.actions.worker.BuildSolar
+gp.fs.0.func.12.nc 		= nc8_action
+gp.fs.0.func.13	 		= ZKGPBTAI.bt.actions.worker.BuildStorage
+gp.fs.0.func.13.nc 		= nc8_action
 
-#CONDITIONS
-gp.fs.0.func.9	 		= ZKGPBTAI.bt.conditions.HasArmy
-gp.fs.0.func.9.nc 		= nc9_condition
-gp.fs.0.func.10	 		= ZKGPBTAI.bt.conditions.HasEco
-gp.fs.0.func.10.nc 		= nc9_condition
+#Conditions
+gp.fs.0.func.14	 		= ZKGPBTAI.bt.conditions.economy.LowEnergy
+gp.fs.0.func.14.nc 		= nc9_condition
+gp.fs.0.func.15	 		= ZKGPBTAI.bt.conditions.economy.HighEnergy
+gp.fs.0.func.15.nc 		= nc9_condition
+gp.fs.0.func.16	 		= ZKGPBTAI.bt.conditions.economy.LowMetal
+gp.fs.0.func.16.nc 		= nc9_condition
+gp.fs.0.func.17	 		= ZKGPBTAI.bt.conditions.economy.HighMetal
+gp.fs.0.func.17.nc 		= nc9_condition

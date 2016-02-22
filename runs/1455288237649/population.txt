@@ -1,8 +1,0 @@
-Average fitness: 0.5 Average size: 5.0
- Generation 0
-0 untilFail(hasArmy)(hasArmy) 0.0
-1 selector[failer(inverter(untilFail(defensive))),succeeder(hasEco),defensive] 1.0
-Average fitness: 0.0 Average size: 2.0
- Generation 1
-0 untilFail(hasArmy)(hasArmy) 0.0
-1 untilFail(hasArmy)(hasArmy) 0.0
