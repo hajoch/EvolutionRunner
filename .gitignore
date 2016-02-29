@@ -18,6 +18,9 @@
 # IntelliJ
 /out/
 
+# archived runs
+/runs/
+
 
 # Project specific files
 
