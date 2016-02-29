@@ -13,7 +13,10 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -42,6 +45,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             // Write BT individual to text file for the Spring Bot to read and parse
             writeToFile("tree", Collections.singletonList(treeString));
 
+            //Long startTime = System.nanoTime();
             double f = getFitness();
 
             KozaFitness fitness = (KozaFitness) individual.fitness;
@@ -62,6 +66,22 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         builder.redirectErrorStream(true);
         Process process = builder.start();
 
+        //kill process if it takes too long
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(1);
+        Runnable task = () ->
+        {
+            //CAUTION - may cause errors if evaluating several individuals at once
+            //This will kill all spring-headless processes.
+            ProcessBuilder killer = new ProcessBuilder("cmd.exe", "/c", new StringBuilder("taskkill /f /im ").append("spring-headless.exe").toString());
+            try {
+                Process killerProc = killer.start();
+                process.destroy();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        };
+        executor.schedule(task, 1000, TimeUnit.SECONDS);
+        //
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
         // Read console output
@@ -99,7 +119,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         writeToFile("out"+START_TIME, output);
 
         int winner = 0;
-        int teamid = 0;
+        int teamid = 1;
         int time = 0;
         int avgEco = 0;
         int soldiers = 0;
