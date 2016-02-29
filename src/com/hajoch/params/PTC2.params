@@ -1,0 +1,7 @@
+#Experiment using the PTC2 initialization procedure
+#PTC2 lets you define probabilities for each node constraint
+
+gp.tc.0.init                    =   ec.gp.build.PTC2
+gp.tc.0.init.expected-size      =   10
+gp.tc.0.init.max-depth          =   6
+
