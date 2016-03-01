@@ -80,7 +80,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
                 e.printStackTrace();
             }
         };
-        executor.schedule(task, 1000, TimeUnit.SECONDS);
+        executor.schedule(task, 1500, TimeUnit.SECONDS);
         //
         BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
@@ -149,9 +149,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             timeFitness =  0d + (time/1000d);
         }
 
-        System.out.println("Fitness = " + (1d-ecoFitness));
+        System.out.println("Fitness = " + ecoFitness);
         return 1d-ecoFitness;
-        // Calculate the fitness //TODO
     }
 
     /**
