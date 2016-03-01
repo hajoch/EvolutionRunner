@@ -37,7 +37,7 @@ public class PopFitVsSizeChart extends JFrame {
         String chartTitle = "PopFitVsSizeChart";
         String xAxisLabel = "Generation";
         String yAxisLabel = "Average Fitness/Size";
-        XYDataset dataset = createDataSet(ResultsSingleton.getAvgFitness(), ResultsSingleton.getAvgSize());
+        XYDataset dataset = createDataSet(ResultsSingleton.getAvgFitness(), ResultsSingleton.getAvgSize(), ResultsSingleton.getBestInds());
 
         JFreeChart chart = ChartFactory.createXYLineChart(chartTitle,
                 xAxisLabel, yAxisLabel, dataset);
@@ -56,7 +56,7 @@ public class PopFitVsSizeChart extends JFrame {
         return new ChartPanel(chart);
     }
 
-    private void createPng(JFreeChart chart, String name){
+    private void createPng(JFreeChart chart, String name) {
         File imageFile = new File("runs\\" + name + "\\popvsfitchart.png");
         int width = 1920;
         int height = 1080;
@@ -68,33 +68,32 @@ public class PopFitVsSizeChart extends JFrame {
         }
     }
 
-
     private static XYSeries createSeries(ArrayList<Double> input, String name) {
         XYSeries series = new XYSeries(name);
-        double max = Collections.max(input);
-        double min = Collections.min(input);
-        if (name == "avgFitness") {
-            for (int i = 0; i < input.size(); i++) {
-                series.add((double) i, 1 - input.get(i));
-                //(1 - input.get(i)) * 100
-            }
-        } else {
-            for (int i = 0; i < input.size(); i++) {
-                series.add((double) i, (input.get(i) - min)/(max-min));
-            }
+        switch (name) {
+            case "avgFitness":
+                for (int i = 0; i < input.size(); i++)
+                    series.add((double) i, 1 - input.get(i));
+                break;
+            case "avgSize":
+                double max = Collections.max(input);
+                double min = Collections.min(input);
+                for (int i = 0; i < input.size(); i++)
+                    series.add((double) i, (input.get(i) - min) / (max - min));
+                break;
+            case "bestIndInGen":
+                for (int i = 0; i < input.size(); i++)
+                    series.add((double) i, input.get(i));
+                break;
         }
         return series;
     }
 
     public static XYDataset createDataSet(ArrayList<Double>... args) {
-
         XYSeriesCollection dataset = new XYSeriesCollection();
-        for (int i = 0; i < args.length; i++) {
-            if (i == 0)
-                dataset.addSeries(createSeries(args[i], "avgFitness"));
-            else
-                dataset.addSeries(createSeries(args[i], "avgSize"));
-        }
+        dataset.addSeries(createSeries(args[0], "avgFitness"));
+        dataset.addSeries(createSeries(args[1], "avgSize"));
+        dataset.addSeries(createSeries(args[2], "bestIndInGen"));
         return dataset;
     }
 }
