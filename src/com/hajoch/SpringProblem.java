@@ -55,7 +55,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     }
 
     // Start game from  commandline using our custom script.
-    public List<String> runZerok() throws IOException{
+    public List<String> runZerok() throws IOException {
         List<String> output = new ArrayList<>();
 
         String[] cmdArgs = new String[]{"cmd.exe", "/c",
@@ -92,7 +92,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
                 output.add(line);
             }
         }
-
+        
+        executor.shutdown();
         return output;
     }
 
@@ -106,7 +107,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         List<String> output = new ArrayList<>();
 
         boolean running = true;
-        while(running) {
+        while (running) {
             try {
                 output = runZerok();
                 running = false;
@@ -116,7 +117,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         }
 
         // Write the console output to file
-        writeToFile("out"+START_TIME, output);
+        writeToFile("out" + START_TIME, output);
 
         int winner = 0;
         int teamid = 1;
@@ -139,18 +140,18 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             }
         }
 
-        double ecoFitness = avgEco/50d;
+        double ecoFitness = avgEco / 50d;
         double timeFitness = 0d;
         if (winner == teamid) {
-            System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
-            timeFitness =  1d - (time/1000d);
+            System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
+            timeFitness = 1d - (time / 1000d);
         } else {
-            System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: "+ avgEco);
-            timeFitness =  0d + (time/1000d);
+            System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
+            timeFitness = 0d + (time / 1000d);
         }
 
         System.out.println("Fitness = " + ecoFitness);
-        return 1d-ecoFitness;
+        return 1d - ecoFitness;
     }
 
     /**
