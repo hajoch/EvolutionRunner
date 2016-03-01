@@ -34,6 +34,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
     //data stored for visualisation
     ArrayList<Double> avgFitnessPerGen = new ArrayList<>();
     ArrayList<Double> avgSizePerGen = new ArrayList<>();
+    ArrayList<Double> bestInds = new ArrayList<>();
     HashMap<String, Double> nodeUsage = new HashMap<>();
 
     String runName = "";
@@ -61,7 +62,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         statisticsFile.getParentFile().mkdirs();
         try {
             statisticslog = state.output.addLog(statisticsFile, true);
-            printer = new PrintWriter("runs\\" + runName + "\\population.txt", "UTF-8");
+
+            printer = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
         } catch (IOException i) {
             state.output.fatal("An IOException occurred while trying to create the log " + statisticsFile + ":\n" + i);
         }
@@ -99,9 +101,19 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
             return node.toString();
     }
 
+    public void initPrintWriter(){
+        try {
+            printer = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
+        } catch (IOException i) {
+            System.out.println("initprintwriter error ");
+        }
+    }
+
     public void postEvaluationStatistics(final EvolutionState state) {
         super.postEvaluationStatistics(state);
 
+        if(printer == null)
+            initPrintWriter();
         // for now we just print the best fitness per subpopulation.
         Individual[] best_i = new Individual[state.population.subpops.length];  // quiets compiler complaints
         for (int x = 0; x < state.population.subpops.length; x++) {
@@ -137,6 +149,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
             state.output.message("Subpop " + x + " best fitness of generation" +
                     (best_i[x].evaluated ? " " : " (evaluated flag not set): ") +
                     best_i[x].fitness.fitnessToStringForHumans());
+            //TODO
+            bestInds.add(1d-((KozaFitness)best_i[x].fitness).standardizedFitness());
 
             // describe the winner if there is a description
             if (state.evaluator.p_problem instanceof SimpleProblemForm)
@@ -155,10 +169,11 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         avgSize = avgSize / state.population.subpops[0].individuals.length;
         avgSizePerGen.add(avgSize);
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
-        printer.write("Average fitness: " + avgFitness + " Average size: " + avgSize);
+        printer.print("Average fitness: " + avgFitness + " Average size: " + avgSize);
         ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
+        ResultsSingleton.setBestInds(bestInds);
         ResultsSingleton.drawChart(runName, false);
         writePopulation(state.population.subpops[0].individuals, state);
     }

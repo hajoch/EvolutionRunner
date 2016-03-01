@@ -39,6 +39,17 @@ public class ResultsSingleton {
 
     }
 
+    public static volatile ArrayList<Double> bestInds = new ArrayList<>();
+
+    public static ArrayList<Double> getBestInds() {
+        return bestInds;
+    }
+
+    public static void setBestInds(ArrayList<Double> bestInds) {
+        ResultsSingleton.bestInds = bestInds;
+
+    }
+
     public static volatile ArrayList<Double> avgSize = new ArrayList<>();
     private static final ResultsSingleton ourInstance = new ResultsSingleton();
 
