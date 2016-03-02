@@ -92,8 +92,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
                 output.add(line);
             }
         }
-        
-        executor.shutdown();
+
+        executor.shutdownNow();
         return output;
     }
 
