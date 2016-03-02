@@ -122,8 +122,11 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         int winner = 0;
         int teamid = 1;
         int time = 0;
-        int avgEco = 0;
+        double avgEco = 0;
         int soldiers = 0;
+        double avgMex = 0;
+        double peakIncome = 0;
+        double killVsExpenditureMetal = 0;
         for (String s : output) {
             if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
                 winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
@@ -135,12 +138,15 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
                 //System.out.println("Time: " + time);
                 soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ") + 10, s.indexOf(" avgEco: ")));
                 //System.out.println("Soldiers: " + soldiers);
-                avgEco = Integer.parseInt(s.substring(s.indexOf("avgEco: ") + 8, s.length()));
+                avgEco = Double.parseDouble(s.substring(s.indexOf("avgEco: ") + 8, s.indexOf("avgMex: ")));
                 //System.out.println("avgEco: " + avgEco);
+                avgMex = Double.parseDouble(s.substring(s.indexOf("avgMex: ") + 8, s.indexOf("peakIncome: ")));
+                peakIncome = Double.parseDouble(s.substring(s.indexOf("peakIncome: ") + 12, s.indexOf("killVsExpenditureMetal: ")));
+                killVsExpenditureMetal = Double.parseDouble(s.substring(s.indexOf("killVsExpenditureMetal: ") + 23, s.length()));
             }
         }
 
-        double ecoFitness = avgEco / 50d;
+/*
         double timeFitness = 0d;
         if (winner == teamid) {
             System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
@@ -148,10 +154,18 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         } else {
             System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
             timeFitness = 0d + (time / 1000d);
-        }
+        }*/
 
-        System.out.println("Fitness = " + ecoFitness);
-        return 1d - ecoFitness;
+        double ecoFitness = avgEco / 50d;
+        double fitness = (ecoFitness * 0.2d) + (avgMex * 0.1d) + (peakIncome * 0.05d) + (killVsExpenditureMetal * 0.15d);
+        if (winner == teamid) {
+            fitness += 0.5d;
+            System.out.println("We won" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+        } else {
+            System.out.println("We lost" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+        }
+        System.out.println("Fitness = " + fitness);
+        return 1d - fitness;
     }
 
     /**
