@@ -88,17 +88,17 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
             setNodeCount(node.children[1]);
         } else if (node.children.length == 1)
             setNodeCount(node.children[0]);
-        String nodeName = node.toString();
+        String nodeName = node.toStringForHumans();
         nodeUsage.put(nodeName, nodeUsage.get(nodeName) != null ? nodeUsage.get(nodeName) + 1 : 1);
     }
 
     public String getTree(GPNode node) {
         if (node.children.length == 2)
-            return "(" + getTree(node.children[0]) + node.toString() + getTree(node.children[1]) + ")";
+            return "(" + getTree(node.children[0]) + node.toStringForHumans() + getTree(node.children[1]) + ")";
         else if (node.children.length == 1)
-            return node.toString() + "(" + getTree(node.children[0]) + ")";
+            return node.toStringForHumans() + "(" + getTree(node.children[0]) + ")";
         else
-            return node.toString();
+            return node.toStringForHumans();
     }
 
     public void initPrintWriter(){
@@ -150,7 +150,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
                     (best_i[x].evaluated ? " " : " (evaluated flag not set): ") +
                     best_i[x].fitness.fitnessToStringForHumans());
             //TODO
-            bestInds.add(1d-((KozaFitness)best_i[x].fitness).standardizedFitness());
+            bestInds.add(1d - ((KozaFitness) best_i[x].fitness).standardizedFitness());
 
             // describe the winner if there is a description
             if (state.evaluator.p_problem instanceof SimpleProblemForm)
