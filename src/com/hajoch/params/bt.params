@@ -145,7 +145,7 @@ gp.type.s.11.member.4                   =       failer
 gp.type.s.11.member.5                   =       condition
 
 #NODE CONSTRAINTS
-gp.nc.size                              =       17
+gp.nc.size                              =       18
 
 gp.nc.0                                 =       ec.gp.GPNodeConstraints
 gp.nc.0.name                            =       nc0
@@ -263,23 +263,33 @@ gp.nc.16.returns                        =       failer
 gp.nc.16.size                           =       1
 gp.nc.16.child.0                        =       allExceptFailer
 
+gp.nc.17                                =       ec.gp.GPNodeConstraints
+gp.nc.17.name                           =       nc17_random_selector
+gp.nc.17.returns                        =       selector
+gp.nc.17.size                           =       3
+gp.nc.17.child.0                        =       allExceptSelector
+gp.nc.17.child.1                        =       allExceptSelector
+gp.nc.17.child.2                        =       allExceptSelector
+
 #COMPOSITE
 gp.fs.0.func.0		 	= bt.composite.Sequence
 gp.fs.0.func.0.nc 		= nc6_fixed_sequence_4
 gp.fs.0.func.1 			= bt.composite.Selector
 gp.fs.0.func.1.nc 		= nc10_fixed_selector
+gp.fs.0.func.2 			= bt.composite.Sequence
+gp.fs.0.func.2.nc 		= nc7_fixed_sequence
 
 #DECORATOR
-gp.fs.0.func.2 			= bt.decorator.Inverter
-gp.fs.0.func.2.nc 		= nc14_inverter
-gp.fs.0.func.3 			= bt.decorator.Succeeder
-gp.fs.0.func.3.nc 		= nc15_succeeder
-gp.fs.0.func.4	 		= bt.decorator.Failer
-gp.fs.0.func.4.nc 		= nc16_failer
-gp.fs.0.func.5 			= bt.decorator.UntilFail
-gp.fs.0.func.5.nc 		= nc12_untilFail
-gp.fs.0.func.6	 		= bt.decorator.UntilSucceed
-gp.fs.0.func.6.nc 		= nc13_untilSucceed
+gp.fs.0.func.3 			= bt.decorator.Inverter
+gp.fs.0.func.3.nc 		= nc14_inverter
+gp.fs.0.func.4 			= bt.decorator.Succeeder
+gp.fs.0.func.4.nc 		= nc15_succeeder
+gp.fs.0.func.5	 		= bt.decorator.Failer
+gp.fs.0.func.5.nc 		= nc16_failer
+gp.fs.0.func.6 			= bt.decorator.UntilFail
+gp.fs.0.func.6.nc 		= nc12_untilFail
+gp.fs.0.func.7	 		= bt.decorator.UntilSucceed
+gp.fs.0.func.7.nc 		= nc13_untilSucceed
 
 
 #stats
