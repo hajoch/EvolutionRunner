@@ -82,7 +82,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
      */
     boolean warned = false;
 
-    public void setNodeCount(GPNode node) {
+/*    public void setNodeCount(GPNode node) {
         if (node.children.length == 2) {
             setNodeCount(node.children[0]);
             setNodeCount(node.children[1]);
@@ -92,7 +92,18 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         String nodeName = node.toStringForHumans().replaceAll("[^a-zA-Z]", " ");
         String arr[] = nodeName.split(" ", 2);
         nodeName = arr[0];
+        if(nodeName.equals(""))
+            nodeName = node.toStringForHumans().replaceAll("[^a-zA-Z]", " ");
         nodeUsage.put(nodeName, nodeUsage.get(nodeName) != null ? nodeUsage.get(nodeName) + 1 : 1);
+    }*/
+
+    public void setNodeCount(GPNode node){
+        String nodeName = node.toString().replaceAll("[^a-zA-Z]", " ");;
+        String arr[] = nodeName.split(" ");
+        for(String s: arr){
+            if(s.length() > 1)
+                nodeUsage.put(s, nodeUsage.get(s) != null ? nodeUsage.get(s) + 1 : 1);
+        }
     }
 
     public String getTree(GPNode node) {
