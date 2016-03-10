@@ -88,7 +88,10 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
             setNodeCount(node.children[1]);
         } else if (node.children.length == 1)
             setNodeCount(node.children[0]);
-        String nodeName = node.toStringForHumans();
+
+        String nodeName = node.toStringForHumans().replaceAll("[^a-zA-Z]", " ");
+        String arr[] = nodeName.split(" ", 2);
+        nodeName = arr[0];
         nodeUsage.put(nodeName, nodeUsage.get(nodeName) != null ? nodeUsage.get(nodeName) + 1 : 1);
     }
 
@@ -101,7 +104,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
             return node.toStringForHumans();
     }
 
-    public void initPrintWriter(){
+    public void initPrintWriter() {
         try {
             printer = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
         } catch (IOException i) {
@@ -112,7 +115,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
     public void postEvaluationStatistics(final EvolutionState state) {
         super.postEvaluationStatistics(state);
 
-        if(printer == null)
+        if (printer == null)
             initPrintWriter();
         // for now we just print the best fitness per subpopulation.
         Individual[] best_i = new Individual[state.population.subpops.length];  // quiets compiler complaints
