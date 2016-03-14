@@ -1,6 +1,7 @@
 ##INHERITANCE
 parent.0 				= general.params
 parent.1				= bt.params
+parent.2                = ecoBT.params
 #parent.2               = PTC2.params
 
 #==========Checkpointing==========
@@ -23,62 +24,3 @@ evalthreads 			= 1
 
 ##PROBLEM
 eval.problem 			= com.hajoch.SpringProblem
-
-#FUNCTIONS (Starts at func.8)
-gp.fs.0.size 			= 31
-
-
-##OLD ECO PARAMS
-#ACTIONS
-gp.fs.0.func.8	 		= ZKGPBTAI.bt.actions.worker.BuildFactory
-gp.fs.0.func.8.nc 		= nc8_action
-gp.fs.0.func.9	 		= ZKGPBTAI.bt.actions.worker.BuildGauss
-gp.fs.0.func.9.nc 		= nc8_action
-gp.fs.0.func.10	 		= ZKGPBTAI.bt.actions.worker.BuildLotus
-gp.fs.0.func.10.nc 		= nc8_action
-gp.fs.0.func.11	 		= ZKGPBTAI.bt.actions.worker.BuildMex
-gp.fs.0.func.11.nc 		= nc8_action
-gp.fs.0.func.12	 		= ZKGPBTAI.bt.actions.worker.BuildRadar
-gp.fs.0.func.12.nc 		= nc8_action
-gp.fs.0.func.13	 		= ZKGPBTAI.bt.actions.worker.BuildSolar
-gp.fs.0.func.13.nc 		= nc8_action
-gp.fs.0.func.14	 		= ZKGPBTAI.bt.actions.worker.BuildStorage
-gp.fs.0.func.14.nc 		= nc8_action
-#Conditions
-gp.fs.0.func.15	 		= ZKGPBTAI.bt.conditions.economy.LowEnergy
-gp.fs.0.func.15.nc 		= nc9_condition
-gp.fs.0.func.16	 		= ZKGPBTAI.bt.conditions.economy.HighEnergy
-gp.fs.0.func.16.nc 		= nc9_condition
-gp.fs.0.func.17	 		= ZKGPBTAI.bt.conditions.economy.LowMetal
-gp.fs.0.func.17.nc 		= nc9_condition
-gp.fs.0.func.18	 		= ZKGPBTAI.bt.conditions.economy.HighMetal
-gp.fs.0.func.18.nc 		= nc9_condition
-
-##New Eco Params
-#Actions
-gp.fs.0.func.19	 		= ZKGPBTAI.bt.actions.movement.MoveToTension
-gp.fs.0.func.19.nc 		= nc8_action
-gp.fs.0.func.20	 		= ZKGPBTAI.bt.actions.movement.MoveToMapCentre
-gp.fs.0.func.20.nc 		= nc8_action
-gp.fs.0.func.21	 		= ZKGPBTAI.bt.actions.movement.MoveToRandom
-gp.fs.0.func.21.nc 		= nc8_action
-gp.fs.0.func.22	 		= ZKGPBTAI.bt.actions.movement.MoveToSafe
-gp.fs.0.func.22.nc 		= nc8_action
-gp.fs.0.func.23	 		= ZKGPBTAI.bt.actions.worker.BuildCaretaker
-gp.fs.0.func.23.nc 		= nc8_action
-
-#Conditions
-gp.fs.0.func.24	 		= ZKGPBTAI.bt.conditions.influence_map.HighTension
-gp.fs.0.func.24.nc 		= nc9_condition
-gp.fs.0.func.25	 		= ZKGPBTAI.bt.conditions.other.EnemyBuildingNear
-gp.fs.0.func.25.nc 		= nc9_condition
-gp.fs.0.func.26	 		= ZKGPBTAI.bt.conditions.other.IsAreaControlled
-gp.fs.0.func.26.nc 		= nc9_condition
-gp.fs.0.func.27	 		= ZKGPBTAI.bt.conditions.other.IsCloaked
-gp.fs.0.func.27.nc 		= nc9_condition
-gp.fs.0.func.28	 		= ZKGPBTAI.bt.conditions.other.LowHealth
-gp.fs.0.func.28.nc 		= nc9_condition
-gp.fs.0.func.29	 		= ZKGPBTAI.bt.conditions.other.MajorityOfMapVisible
-gp.fs.0.func.29.nc 		= nc9_condition
-gp.fs.0.func.30	 		= ZKGPBTAI.bt.conditions.other.TopOfHill
-gp.fs.0.func.30.nc 		= nc9_condition

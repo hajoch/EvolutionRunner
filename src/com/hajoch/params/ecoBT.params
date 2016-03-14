@@ -1,0 +1,64 @@
+#FUNCTIONS (Starts at func.14)
+gp.fs.0.size 			= 40
+
+#BUILD ACTIONS
+gp.fs.0.func.14	 		= ZKGPBTAI.bt.actions.worker.BuildFactory
+gp.fs.0.func.14.nc 		= nc0_action
+gp.fs.0.func.15	 		= ZKGPBTAI.bt.actions.worker.BuildGauss
+gp.fs.0.func.15.nc 		= nc0_action
+gp.fs.0.func.16	 		= ZKGPBTAI.bt.actions.worker.BuildLotus
+gp.fs.0.func.16.nc 		= nc0_action
+gp.fs.0.func.17	 		= ZKGPBTAI.bt.actions.worker.BuildMex
+gp.fs.0.func.17.nc 		= nc0_action
+gp.fs.0.func.18	 		= ZKGPBTAI.bt.actions.worker.BuildRadar
+gp.fs.0.func.18.nc 		= nc0_action
+gp.fs.0.func.19	 		= ZKGPBTAI.bt.actions.worker.BuildSolar
+gp.fs.0.func.19.nc 		= nc0_action
+gp.fs.0.func.20	 		= ZKGPBTAI.bt.actions.worker.BuildStorage
+gp.fs.0.func.20.nc 		= nc0_action
+gp.fs.0.func.21	 		= ZKGPBTAI.bt.actions.worker.BuildCaretaker
+gp.fs.0.func.21.nc 		= nc0_action
+
+#MOVE ACTIONS
+gp.fs.0.func.22	 		= ZKGPBTAI.bt.actions.movement.MoveToTension
+gp.fs.0.func.22.nc 		= nc0_action
+gp.fs.0.func.23	 		= ZKGPBTAI.bt.actions.movement.MoveToMapCentre
+gp.fs.0.func.23.nc 		= nc0_action
+gp.fs.0.func.24	 		= ZKGPBTAI.bt.actions.movement.MoveToRandom
+gp.fs.0.func.24.nc 		= nc0_action
+gp.fs.0.func.25	 		= ZKGPBTAI.bt.actions.movement.MoveToSafe
+gp.fs.0.func.25.nc 		= nc0_action
+
+#OTHER ACTIONS
+gp.fs.0.func.26	 		= ZKGPBTAI.bt.actions.worker.RepairUnit
+gp.fs.0.func.26.nc 		= nc0_action
+gp.fs.0.func.27	 		= ZKGPBTAI.bt.actions.worker.ReclaimMetal
+gp.fs.0.func.27.nc 		= nc0_action
+
+#ECO CONDITIONS
+gp.fs.0.func.28	 		= ZKGPBTAI.bt.conditions.economy.LowEnergy
+gp.fs.0.func.28.nc 		= nc0_condition
+gp.fs.0.func.29	 		= ZKGPBTAI.bt.conditions.economy.HighEnergy
+gp.fs.0.func.29.nc 		= nc0_condition
+gp.fs.0.func.30	 		= ZKGPBTAI.bt.conditions.economy.LowMetal
+gp.fs.0.func.30.nc 		= nc0_condition
+gp.fs.0.func.31	 		= ZKGPBTAI.bt.conditions.economy.HighMetal
+gp.fs.0.func.31.nc 		= nc0_condition
+
+#OTHER CONDITIONS
+gp.fs.0.func.32	 		= ZKGPBTAI.bt.conditions.influence_map.HighTension
+gp.fs.0.func.32.nc 		= nc0_condition
+gp.fs.0.func.33	 		= ZKGPBTAI.bt.conditions.other.EnemyBuildingNear
+gp.fs.0.func.33.nc 		= nc0_condition
+gp.fs.0.func.34	 		= ZKGPBTAI.bt.conditions.other.IsAreaControlled
+gp.fs.0.func.34.nc 		= nc0_condition
+gp.fs.0.func.35	 		= ZKGPBTAI.bt.conditions.other.IsCloaked
+gp.fs.0.func.35.nc 		= nc0_condition
+gp.fs.0.func.36	 		= ZKGPBTAI.bt.conditions.other.LowHealth
+gp.fs.0.func.36.nc 		= nc0_condition
+gp.fs.0.func.37	 		= ZKGPBTAI.bt.conditions.other.MajorityOfMapVisible
+gp.fs.0.func.37.nc 		= nc0_condition
+gp.fs.0.func.38	 		= ZKGPBTAI.bt.conditions.other.TopOfHill
+gp.fs.0.func.38.nc 		= nc0_condition
+gp.fs.0.func.39	 		= ZKGPBTAI.bt.conditions.other.CloseToFactory
+gp.fs.0.func.39.nc 		= nc0_condition

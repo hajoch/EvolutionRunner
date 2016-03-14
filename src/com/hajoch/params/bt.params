@@ -145,151 +145,163 @@ gp.type.s.11.member.4                   =       failer
 gp.type.s.11.member.5                   =       condition
 
 #NODE CONSTRAINTS
-gp.nc.size                              =       18
+gp.nc.size                              =       17
 
 gp.nc.0                                 =       ec.gp.GPNodeConstraints
-gp.nc.0.name                            =       nc0
-gp.nc.0.returns                         =       any
+gp.nc.0.name                            =       nc0_action
+gp.nc.0.returns                         =       action
 gp.nc.0.size                            =       0
 
 gp.nc.1                                 =       ec.gp.GPNodeConstraints
-gp.nc.1.name                            =       nc1
-gp.nc.1.returns                         =       any
-gp.nc.1.size                            =       1
-gp.nc.1.child.0                         =       any
+gp.nc.1.name                            =       nc0_condition
+gp.nc.1.returns                         =       condition
+gp.nc.1.size                            =       0
 
-gp.nc.2                                 =       ec.gp.GPNodeConstraints
-gp.nc.2.name                            =       nc2
-gp.nc.2.returns                         =       any
-gp.nc.2.size                            =       2
-gp.nc.2.child.0                         =       any
-gp.nc.2.child.1                         =       any
+gp.nc.2                                =       ec.gp.GPNodeConstraints
+gp.nc.2.name                           =       nc1_untilFail
+gp.nc.2.returns                        =       untilFail
+gp.nc.2.size                           =       1
+gp.nc.2.child.0                        =       allExceptUntilFailUntilSucceedSucceeder
 
-gp.nc.3                                 =       ec.gp.GPNodeConstraints
-gp.nc.3.name                            =       nc3
-gp.nc.3.returns                         =       any
-gp.nc.3.size                            =       3
-gp.nc.3.child.0                         =       any
-gp.nc.3.child.1                         =       any
-gp.nc.3.child.2                         =       any
+gp.nc.3                                =       ec.gp.GPNodeConstraints
+gp.nc.3.name                           =       nc1_untilSucceed
+gp.nc.3.returns                        =       untilSucceed
+gp.nc.3.size                           =       1
+gp.nc.3.child.0                        =       allExceptUntilFailUntilSucceedFailer
 
-gp.nc.4                                 =       ec.gp.GPNodeConstraints
-gp.nc.4.name                            =       nc4
-gp.nc.4.returns                         =       any
-gp.nc.4.size                            =       4
-gp.nc.4.child.0                         =       any
-gp.nc.4.child.1                         =       any
-gp.nc.4.child.2                         =       any
-gp.nc.4.child.3                         =       any
+gp.nc.4                                =       ec.gp.GPNodeConstraints
+gp.nc.4.name                           =       nc1_decorator
+gp.nc.4.returns                        =       decorator
+gp.nc.4.size                           =       1
+gp.nc.4.child.0                        =       any
 
-gp.nc.5                                 =       ec.gp.GPNodeConstraints
-gp.nc.5.name                            =       nc5
-gp.nc.5.returns                         =       any
-gp.nc.5.size                            =       5
-gp.nc.5.child.0                         =       any
-gp.nc.5.child.1                         =       any
-gp.nc.5.child.2                         =       any
-gp.nc.5.child.3                         =       any
-gp.nc.5.child.4                         =       any
+gp.nc.5                                =       ec.gp.GPNodeConstraints
+gp.nc.5.name                           =       nc1_inverter
+gp.nc.5.returns                        =       inverter
+gp.nc.5.size                           =       1
+gp.nc.5.child.0                        =       allExceptInverter
 
-gp.nc.6                                 =       ec.gp.GPNodeConstraints
-gp.nc.6.name                            =       nc6_fixed_sequence_4
-gp.nc.6.returns                         =       sequence
-gp.nc.6.size                            =       4
-gp.nc.6.child.0                         =       allExceptSequenceAction
-gp.nc.6.child.1                         =       allExceptSequenceAction
-gp.nc.6.child.2                         =       allExceptSequenceAction
-gp.nc.6.child.3                         =       action
+gp.nc.6                                =       ec.gp.GPNodeConstraints
+gp.nc.6.name                           =       nc1_succeeder
+gp.nc.6.returns                        =       succeeder
+gp.nc.6.size                           =       1
+gp.nc.6.child.0                        =       allExceptSucceeder
 
-gp.nc.7                                 =       ec.gp.GPNodeConstraints
-gp.nc.7.name                            =       nc7_fixed_sequence
-gp.nc.7.returns                         =       sequence
-gp.nc.7.size                            =       3
-gp.nc.7.child.0                         =       allExceptSequenceAction
-gp.nc.7.child.1                         =       allExceptSequenceAction
-gp.nc.7.child.2                         =       action
+gp.nc.7                                =       ec.gp.GPNodeConstraints
+gp.nc.7.name                           =       nc1_failer
+gp.nc.7.returns                        =       failer
+gp.nc.7.size                           =       1
+gp.nc.7.child.0                        =       allExceptFailer
 
-gp.nc.8                                 =       ec.gp.GPNodeConstraints
-gp.nc.8.name                            =       nc8_action
-gp.nc.8.returns                         =       action
-gp.nc.8.size                            =       0
+gp.nc.8                                =       ec.gp.GPNodeConstraints
+gp.nc.8.name                           =       nc2_sequence
+gp.nc.8.returns                        =       sequence
+gp.nc.8.size                           =       2
+gp.nc.8.child.0                        =       allExceptAction
+gp.nc.8.child.1                        =       action
 
 gp.nc.9                                 =       ec.gp.GPNodeConstraints
-gp.nc.9.name                            =       nc9_condition
-gp.nc.9.returns                         =       condition
-gp.nc.9.size                            =       0
+gp.nc.9.name                            =       nc3_sequence
+gp.nc.9.returns                         =       sequence
+gp.nc.9.size                            =       3
+gp.nc.9.child.0                         =       allExceptAction
+gp.nc.9.child.1                         =       allExceptAction
+gp.nc.9.child.2                         =       action
 
-gp.nc.10                                =       ec.gp.GPNodeConstraints
-gp.nc.10.name                           =       nc10_fixed_selector
-gp.nc.10.returns                        =       selector
-gp.nc.10.size                           =       3
-gp.nc.10.child.0                        =       allExceptSelector
-gp.nc.10.child.1                        =       allExceptSelector
-gp.nc.10.child.2                        =       allExceptSelector
+gp.nc.10                                 =       ec.gp.GPNodeConstraints
+gp.nc.10.name                            =       nc4_sequence
+gp.nc.10.returns                         =       sequence
+gp.nc.10.size                            =       4
+gp.nc.10.child.0                         =       allExceptAction
+gp.nc.10.child.1                         =       allExceptAction
+gp.nc.10.child.2                         =       allExceptAction
+gp.nc.10.child.3                         =       action
 
-gp.nc.11                                =       ec.gp.GPNodeConstraints
-gp.nc.11.name                           =       nc11_decorator
-gp.nc.11.returns                        =       decorator
-gp.nc.11.size                           =       1
-gp.nc.11.child.0                        =       any
+gp.nc.11                                 =       ec.gp.GPNodeConstraints
+gp.nc.11.name                            =       nc5_sequence
+gp.nc.11.returns                         =       sequence
+gp.nc.11.size                            =       5
+gp.nc.11.child.0                         =       allExceptAction
+gp.nc.11.child.1                         =       allExceptAction
+gp.nc.11.child.2                         =       allExceptAction
+gp.nc.11.child.3                         =       allExceptAction
+gp.nc.11.child.4                         =       action
 
 gp.nc.12                                =       ec.gp.GPNodeConstraints
-gp.nc.12.name                           =       nc12_untilFail
-gp.nc.12.returns                        =       untilFail
-gp.nc.12.size                           =       1
-gp.nc.12.child.0                        =       allExceptUntilFailUntilSucceedSucceeder
+gp.nc.12.name                           =       nc2_selector
+gp.nc.12.returns                        =       selector
+gp.nc.12.size                           =       2
+gp.nc.12.child.0                        =       any
+gp.nc.12.child.1                        =       any
 
 gp.nc.13                                =       ec.gp.GPNodeConstraints
-gp.nc.13.name                           =       nc13_untilSucceed
-gp.nc.13.returns                        =       untilSucceed
-gp.nc.13.size                           =       1
-gp.nc.13.child.0                        =       allExceptUntilFailUntilSucceedFailer
+gp.nc.13.name                           =       nc3_selector
+gp.nc.13.returns                        =       selector
+gp.nc.13.size                           =       3
+gp.nc.13.child.0                        =       any
+gp.nc.13.child.1                        =       any
+gp.nc.13.child.2                        =       any
 
 gp.nc.14                                =       ec.gp.GPNodeConstraints
-gp.nc.14.name                           =       nc14_inverter
-gp.nc.14.returns                        =       inverter
-gp.nc.14.size                           =       1
-gp.nc.14.child.0                        =       allExceptInverter
+gp.nc.14.name                           =       nc4_selector
+gp.nc.14.returns                        =       selector
+gp.nc.14.size                           =       4
+gp.nc.14.child.0                        =       any
+gp.nc.14.child.1                        =       any
+gp.nc.14.child.2                        =       any
+gp.nc.14.child.3                        =       any
 
 gp.nc.15                                =       ec.gp.GPNodeConstraints
-gp.nc.15.name                           =       nc15_succeeder
-gp.nc.15.returns                        =       succeeder
-gp.nc.15.size                           =       1
-gp.nc.15.child.0                        =       allExceptSucceeder
+gp.nc.15.name                           =       nc5_selector
+gp.nc.15.returns                        =       selector
+gp.nc.15.size                           =       5
+gp.nc.15.child.0                        =       any
+gp.nc.15.child.1                        =       any
+gp.nc.15.child.2                        =       any
+gp.nc.15.child.3                        =       any
+gp.nc.15.child.4                        =       any
 
 gp.nc.16                                =       ec.gp.GPNodeConstraints
-gp.nc.16.name                           =       nc16_failer
-gp.nc.16.returns                        =       failer
-gp.nc.16.size                           =       1
-gp.nc.16.child.0                        =       allExceptFailer
-
-gp.nc.17                                =       ec.gp.GPNodeConstraints
-gp.nc.17.name                           =       nc17_random_selector
-gp.nc.17.returns                        =       selector
-gp.nc.17.size                           =       3
-gp.nc.17.child.0                        =       allExceptSelector
-gp.nc.17.child.1                        =       allExceptSelector
-gp.nc.17.child.2                        =       allExceptSelector
+gp.nc.16.name                           =       nc3_random_selector
+gp.nc.16.returns                        =       selector
+gp.nc.16.size                           =       3
+gp.nc.16.child.0                        =       any
+gp.nc.16.child.1                        =       any
+gp.nc.16.child.2                        =       any
 
 #COMPOSITE
 gp.fs.0.func.0		 	= bt.composite.Sequence
-gp.fs.0.func.0.nc 		= nc6_fixed_sequence_4
-gp.fs.0.func.1 			= bt.composite.Selector
-gp.fs.0.func.1.nc 		= nc10_fixed_selector
-gp.fs.0.func.2 			= bt.composite.Sequence
-gp.fs.0.func.2.nc 		= nc7_fixed_sequence
+gp.fs.0.func.0.nc 		= nc2_sequence
+gp.fs.0.func.1		 	= bt.composite.Sequence
+gp.fs.0.func.1.nc 		= nc3_sequence
+gp.fs.0.func.2		 	= bt.composite.Sequence
+gp.fs.0.func.2.nc 		= nc4_sequence
+gp.fs.0.func.3		 	= bt.composite.Sequence
+gp.fs.0.func.3.nc 		= nc5_sequence
+
+gp.fs.0.func.4 			= bt.composite.Selector
+gp.fs.0.func.4.nc 		= nc2_selector
+gp.fs.0.func.5 			= bt.composite.Selector
+gp.fs.0.func.5.nc 		= nc2_selector
+gp.fs.0.func.6 			= bt.composite.Selector
+gp.fs.0.func.6.nc 		= nc2_selector
+gp.fs.0.func.7 			= bt.composite.Selector
+gp.fs.0.func.7.nc 		= nc2_selector
+
+gp.fs.0.func.8 			= bt.composite.RandomSelector
+gp.fs.0.func.8.nc 		= nc3_random_selector
 
 #DECORATOR
-gp.fs.0.func.3 			= bt.decorator.Inverter
-gp.fs.0.func.3.nc 		= nc14_inverter
-gp.fs.0.func.4 			= bt.decorator.Succeeder
-gp.fs.0.func.4.nc 		= nc15_succeeder
-gp.fs.0.func.5	 		= bt.decorator.Failer
-gp.fs.0.func.5.nc 		= nc16_failer
-gp.fs.0.func.6 			= bt.decorator.UntilFail
-gp.fs.0.func.6.nc 		= nc12_untilFail
-gp.fs.0.func.7	 		= bt.decorator.UntilSucceed
-gp.fs.0.func.7.nc 		= nc13_untilSucceed
+gp.fs.0.func.9 			= bt.decorator.Inverter
+gp.fs.0.func.9.nc 		= nc1_inverter
+gp.fs.0.func.10 		= bt.decorator.Succeeder
+gp.fs.0.func.10.nc 		= nc1_succeeder
+gp.fs.0.func.11	 		= bt.decorator.Failer
+gp.fs.0.func.11.nc 		= nc1_failer
+gp.fs.0.func.12 		= bt.decorator.UntilFail
+gp.fs.0.func.12.nc 		= nc1_untilFail
+gp.fs.0.func.13	 		= bt.decorator.UntilSucceed
+gp.fs.0.func.13.nc 		= nc1_untilSucceed
 
 
 #stats
