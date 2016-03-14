@@ -157,7 +157,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         }*/
 
         double ecoFitness = avgEco / 50d;
-        double fitness = (ecoFitness * 0.2d) + (avgMex * 0.1d) + (peakIncome * 0.05d) + (killVsExpenditureMetal * 0.15d);
+        double fitness = (ecoFitness * 0.25d) + (avgMex * 0.1d) + (peakIncome * 0.05d) + (killVsExpenditureMetal * 0.10d);
         if (winner == teamid) {
             fitness += 0.5d;
             System.out.println("We won" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
