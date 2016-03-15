@@ -36,7 +36,7 @@ public class PopFitVsSizeChart extends JFrame {
     private JPanel createChartPanel(String name) {
         String chartTitle = "PopFitVsSizeChart";
         String xAxisLabel = "Generation";
-        String yAxisLabel = "Average Fitness/Size";
+        String yAxisLabel = "average fitness/normalized size";
         XYDataset dataset = createDataSet(ResultsSingleton.getAvgFitness(), ResultsSingleton.getAvgSize(), ResultsSingleton.getBestInds());
 
         JFreeChart chart = ChartFactory.createXYLineChart(chartTitle,
@@ -71,17 +71,17 @@ public class PopFitVsSizeChart extends JFrame {
     private static XYSeries createSeries(ArrayList<Double> input, String name) {
         XYSeries series = new XYSeries(name);
         switch (name) {
-            case "avgFitness":
+            case "average fitness":
                 for (int i = 0; i < input.size(); i++)
                     series.add((double) i, 1 - input.get(i));
                 break;
-            case "avgSize":
+            case "average normalized size":
                 double max = Collections.max(input);
                 double min = Collections.min(input);
                 for (int i = 0; i < input.size(); i++)
                     series.add((double) i, (input.get(i) - min) / (max - min));
                 break;
-            case "bestIndInGen":
+            case "best individual in generation":
                 for (int i = 0; i < input.size(); i++)
                     series.add((double) i, input.get(i));
                 break;
@@ -91,9 +91,9 @@ public class PopFitVsSizeChart extends JFrame {
 
     public static XYDataset createDataSet(ArrayList<Double>... args) {
         XYSeriesCollection dataset = new XYSeriesCollection();
-        dataset.addSeries(createSeries(args[0], "avgFitness"));
-        dataset.addSeries(createSeries(args[1], "avgSize"));
-        dataset.addSeries(createSeries(args[2], "bestIndInGen"));
+        dataset.addSeries(createSeries(args[0], "average fitness"));
+        dataset.addSeries(createSeries(args[1], "average normalized size"));
+        dataset.addSeries(createSeries(args[2], "best individual in generation"));
         return dataset;
     }
 }
