@@ -1,5 +1,5 @@
 #FUNCTIONS (Starts at func.14)
-gp.fs.0.size 			= 40
+gp.fs.0.size 			= 39
 
 #BUILD ACTIONS
 gp.fs.0.func.14	 		= ZKGPBTAI.bt.actions.worker.BuildFactory
@@ -52,13 +52,11 @@ gp.fs.0.func.33	 		= ZKGPBTAI.bt.conditions.other.EnemyBuildingNear
 gp.fs.0.func.33.nc 		= nc0_condition
 gp.fs.0.func.34	 		= ZKGPBTAI.bt.conditions.other.IsAreaControlled
 gp.fs.0.func.34.nc 		= nc0_condition
-gp.fs.0.func.35	 		= ZKGPBTAI.bt.conditions.other.IsCloaked
 gp.fs.0.func.35.nc 		= nc0_condition
-gp.fs.0.func.36	 		= ZKGPBTAI.bt.conditions.other.LowHealth
+gp.fs.0.func.35	 		= ZKGPBTAI.bt.conditions.other.LowHealth
+gp.fs.0.func.36	 		= ZKGPBTAI.bt.conditions.other.MajorityOfMapVisible
 gp.fs.0.func.36.nc 		= nc0_condition
-gp.fs.0.func.37	 		= ZKGPBTAI.bt.conditions.other.MajorityOfMapVisible
+gp.fs.0.func.37	 		= ZKGPBTAI.bt.conditions.other.TopOfHill
 gp.fs.0.func.37.nc 		= nc0_condition
-gp.fs.0.func.38	 		= ZKGPBTAI.bt.conditions.other.TopOfHill
+gp.fs.0.func.38	 		= ZKGPBTAI.bt.conditions.other.CloseToFactory
 gp.fs.0.func.38.nc 		= nc0_condition
-gp.fs.0.func.39	 		= ZKGPBTAI.bt.conditions.other.CloseToFactory
-gp.fs.0.func.39.nc 		= nc0_condition
