@@ -36,9 +36,10 @@ pop.subpop.0.species.pipe.generate-max  =       false
 #crossover and reproduction probabilities
 pop.subpop.0.species.pipe.num-sources   =       2
 pop.subpop.0.species.pipe.source.0      =       ec.gp.koza.CrossoverPipeline
-pop.subpop.0.species.pipe.source.0.prob =       0.9
+pop.subpop.0.species.pipe.source.0.prob =       0.85
 pop.subpop.0.species.pipe.source.1      =       ec.breed.ReproductionPipeline
-pop.subpop.0.species.pipe.source.1.prob =       0.1
+pop.subpop.0.species.pipe.source.1.prob =       0.15
+
 
 #==========Selection==============
 #reproduction
@@ -59,14 +60,14 @@ gp.koza.mutate.build.0                  =       ec.gp.koza.GrowBuilder
 gp.koza.mutate.maxdepth                 =       17
 gp.koza.mutate.tries                    =       1
 
-select.tournament.size                  =       3
+select.tournament.size                  =       7
 
-gp.koza.grow.min-depth                  =       5
-gp.koza.grow.max-depth                  =       5
+gp.koza.grow.min-depth                  =       3
+gp.koza.grow.max-depth                  =       6
 
 #node selection
-gp.koza.ns.terminals                    =       0.1
-gp.koza.ns.nonterminals                 =       0.9
+gp.koza.ns.terminals                    =       0.2
+gp.koza.ns.nonterminals                 =       0.8
 gp.koza.ns.root                         =       0.0
 
 #==========Function set===========

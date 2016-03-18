@@ -2,8 +2,6 @@ gp.fs.size 				= 1
 gp.fs.0 				= ec.gp.GPFunctionSet
 gps.fs.0.name 			= f0
 
-#//todo fix variable amount of children
-
 #==========Types=================
 gp.type.a.size                          =       9
 gp.type.a.0.name                        =       condition
@@ -197,35 +195,35 @@ gp.nc.8                                =       ec.gp.GPNodeConstraints
 gp.nc.8.name                           =       nc2_sequence
 gp.nc.8.returns                        =       sequence
 gp.nc.8.size                           =       2
-gp.nc.8.child.0                        =       allExceptAction
-gp.nc.8.child.1                        =       action
+gp.nc.8.child.0                        =       any
+gp.nc.8.child.1                        =       any
 
 gp.nc.9                                 =       ec.gp.GPNodeConstraints
 gp.nc.9.name                            =       nc3_sequence
 gp.nc.9.returns                         =       sequence
 gp.nc.9.size                            =       3
-gp.nc.9.child.0                         =       allExceptAction
-gp.nc.9.child.1                         =       allExceptAction
-gp.nc.9.child.2                         =       action
+gp.nc.9.child.0                         =       any
+gp.nc.9.child.1                         =       any
+gp.nc.9.child.2                         =       any
 
 gp.nc.10                                 =       ec.gp.GPNodeConstraints
 gp.nc.10.name                            =       nc4_sequence
 gp.nc.10.returns                         =       sequence
 gp.nc.10.size                            =       4
-gp.nc.10.child.0                         =       allExceptAction
-gp.nc.10.child.1                         =       allExceptAction
-gp.nc.10.child.2                         =       allExceptAction
-gp.nc.10.child.3                         =       action
+gp.nc.10.child.0                         =       any
+gp.nc.10.child.1                         =       any
+gp.nc.10.child.2                         =       any
+gp.nc.10.child.3                         =       any
 
 gp.nc.11                                 =       ec.gp.GPNodeConstraints
 gp.nc.11.name                            =       nc5_sequence
 gp.nc.11.returns                         =       sequence
 gp.nc.11.size                            =       5
-gp.nc.11.child.0                         =       allExceptAction
-gp.nc.11.child.1                         =       allExceptAction
-gp.nc.11.child.2                         =       allExceptAction
-gp.nc.11.child.3                         =       allExceptAction
-gp.nc.11.child.4                         =       action
+gp.nc.11.child.0                         =       any
+gp.nc.11.child.1                         =       any
+gp.nc.11.child.2                         =       any
+gp.nc.11.child.3                         =       any
+gp.nc.11.child.4                         =       any
 
 gp.nc.12                                =       ec.gp.GPNodeConstraints
 gp.nc.12.name                           =       nc2_selector

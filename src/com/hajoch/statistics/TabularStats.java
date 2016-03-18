@@ -51,7 +51,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
     /**
      * Should we compress the file?
      */
-    public static PrintWriter printer;
+    public static PrintWriter popForHumansPrinter;
+    public static PrintWriter popForECJPrinter;
 
     public void setup(final EvolutionState state, final Parameter base) {
         super.setup(state, base);
@@ -63,7 +64,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         try {
             statisticslog = state.output.addLog(statisticsFile, true);
 
-            printer = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
+            popForHumansPrinter = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
+            popForECJPrinter = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\popDetails.txt", true)));
         } catch (IOException i) {
             state.output.fatal("An IOException occurred while trying to create the log " + statisticsFile + ":\n" + i);
         }
@@ -81,21 +83,6 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
      * Logs the best individual of the generation.
      */
     boolean warned = false;
-
-/*    public void setNodeCount(GPNode node) {
-        if (node.children.length == 2) {
-            setNodeCount(node.children[0]);
-            setNodeCount(node.children[1]);
-        } else if (node.children.length == 1)
-            setNodeCount(node.children[0]);
-
-        String nodeName = node.toStringForHumans().replaceAll("[^a-zA-Z]", " ");
-        String arr[] = nodeName.split(" ", 2);
-        nodeName = arr[0];
-        if(nodeName.equals(""))
-            nodeName = node.toStringForHumans().replaceAll("[^a-zA-Z]", " ");
-        nodeUsage.put(nodeName, nodeUsage.get(nodeName) != null ? nodeUsage.get(nodeName) + 1 : 1);
-    }*/
 
     public void setNodeCount(GPNode node){
         String nodeName = node.toString().replaceAll("[^a-zA-Z]", " ");;
@@ -117,7 +104,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
 
     public void initPrintWriter() {
         try {
-            printer = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
+            popForHumansPrinter = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\population.txt", true)));
+            popForECJPrinter = new PrintWriter(new BufferedWriter(new FileWriter("runs\\" + runName + "\\popDetails.txt", true)));
         } catch (IOException i) {
             System.out.println("initprintwriter error ");
         }
@@ -126,7 +114,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
     public void postEvaluationStatistics(final EvolutionState state) {
         super.postEvaluationStatistics(state);
 
-        if (printer == null)
+        if (popForHumansPrinter == null || popForECJPrinter == null)
             initPrintWriter();
         // for now we just print the best fitness per subpopulation.
         Individual[] best_i = new Individual[state.population.subpops.length];  // quiets compiler complaints
@@ -183,7 +171,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         avgSize = avgSize / state.population.subpops[0].individuals.length;
         avgSizePerGen.add(avgSize);
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
-        printer.print("Average fitness: " + avgFitness + " Average size: " + avgSize);
+        popForHumansPrinter.print("Average fitness: " + avgFitness + " Average size: " + avgSize);
         ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
@@ -193,9 +181,10 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
     }
 
     public void writePopulation(Individual[] pop, EvolutionState state) {
-        printer.print("\r\n Generation " + state.generation + "\r\n");
+        popForHumansPrinter.print("\r\n Generation " + state.generation + "\r\n");
         for (int i = 0; i < pop.length; i++) {
-            printer.print(i + " " + getTree(((GPIndividual) pop[i]).trees[0].child).replace(" ", "") + " " + ((KozaFitness) pop[i].fitness).standardizedFitness() + "\r\n");
+            popForHumansPrinter.print(i + " " + getTree(((GPIndividual) pop[i]).trees[0].child).replace(" ", "") + " " + ((KozaFitness) pop[i].fitness).standardizedFitness() + "\r\n");
+            pop[0].printIndividual(state, popForECJPrinter);
         }
     }
 
@@ -227,7 +216,8 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         }
 
         ResultsSingleton.drawChart(runName, true);
-        printer.close();
+        popForHumansPrinter.close();
+        popForECJPrinter.close();
 
         //archive checkpoints
         Utility.archiveCheckpoints(".\\runs\\" + runName + "\\checkpoints");

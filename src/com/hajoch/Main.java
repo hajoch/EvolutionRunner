@@ -12,7 +12,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        String[] params = new String[]{"-file", "src\\com\\hajoch\\params\\problem.params"};
+        while (true) {
+            String[] params = new String[]{"-file", "src\\com\\hajoch\\params\\problem.params"};
 
             String checkpoint = getLatestCheckpoint();
             if (checkpoint.equals("")) {
@@ -21,6 +22,7 @@ public class Main {
                 String[] fromCheckpoint = new String[]{"-checkpoint", "src\\com\\hajoch\\checkpoints\\" + checkpoint};
                 Evolve.main(fromCheckpoint);
             }
+        }
     }
 
     public static String getLatestCheckpoint() {

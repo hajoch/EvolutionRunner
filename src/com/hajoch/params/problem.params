@@ -11,8 +11,8 @@ checkpoint-directory                    =       ..//checkpoints
 
 
 ##SIMPLIFIED ENVIRONMENT
-pop.subpop.0.size 		= 2
-generations 			= 100
+pop.subpop.0.size 		= 100
+generations 			= 50
 
 #builder
 #gp.tc.0.init = ec.gp.koza.HalfBuilder

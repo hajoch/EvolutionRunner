@@ -46,8 +46,15 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             writeToFile("tree", Collections.singletonList(treeString));
 
             //Long startTime = System.nanoTime();
-            double f = getFitness();
+            double f = 0;
+            //This variable defines the amount of times the evaluation will be run
+            int evalCounts = 2;
+            for(int e = 0; e < 2; e++)
+                f += getFitness();
 
+            f = f/evalCounts;
+
+            System.out.println("Fitness = " + f);
             KozaFitness fitness = (KozaFitness) individual.fitness;
             fitness.setStandardizedFitness(evolutionState, f);
             individual.evaluated = true;
@@ -148,25 +155,14 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             }
         }
 
-/*
-        double timeFitness = 0d;
-        if (winner == teamid) {
-            System.out.println("We won." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
-            timeFitness = 1d - (time / 1000d);
-        } else {
-            System.out.println("We lost." + " Time: " + time + " Soldiers: " + soldiers + " avgEco: " + avgEco);
-            timeFitness = 0d + (time / 1000d);
-        }*/
-
         double ecoFitness = avgEco / 50d;
         double fitness = (ecoFitness * 0.25d) + (avgMex * 0.1d) + (peakIncome * 0.05d) + (killVsExpenditureMetal * 0.10d);
         if (winner == teamid) {
             fitness += 0.5d;
-            System.out.println("We won" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+            //System.out.println("We won" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
         } else {
-            System.out.println("We lost" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+            //System.out.println("We lost" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
         }
-        System.out.println("Fitness = " + fitness);
         return 1d - fitness;
     }
 
