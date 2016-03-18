@@ -82,15 +82,17 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         };
         executor.schedule(task, 1500, TimeUnit.SECONDS);
         //
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-        // Read console output
-        String line;
-        while (process.isAlive()) {
-            line = reader.readLine();
-            if (null != line) {
-                output.add(line);
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+            // Read console output
+            String line;
+            while (process.isAlive()) {
+                line = reader.readLine();
+                if (null != line) {
+                    output.add(line);
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         executor.shutdownNow();
@@ -177,8 +179,6 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
      */
     private boolean writeToFile(String name, List<String> content) {
 
-        PrintWriter printer;
-
         File file = new File(new StringBuilder(OUT_URL).append(name).append(".txt").toString());
         try {
             file.getParentFile().mkdirs();
@@ -187,8 +187,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            printer = new PrintWriter(file);
+        try (PrintWriter printer = new PrintWriter(file)) {
             for (String s : content)
                 printer.write(s + "\n");
             printer.close();
