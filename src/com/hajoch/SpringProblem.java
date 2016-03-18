@@ -27,7 +27,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     // TODO  maybe replace start_time with generation and individual, or of the like
     private final long START_TIME = System.currentTimeMillis();
     // Path to the script that runs Zero-K
-    private final String SCRIPT_URL = "src\\com\\hajoch\\script";
+    private final String SCRIPT_URL = "C:\\work\\EvolutionRunner\\src\\com\\hajoch\\script\\";
     // Path to where the BehaviourTree individual and gameLog should be saved
     private final String OUT_URL = "out\\";
 
@@ -74,7 +74,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             //This will kill all spring-headless processes.
             ProcessBuilder killer = new ProcessBuilder("cmd.exe", "/c", new StringBuilder("taskkill /f /im ").append("spring-headless.exe").toString());
             try {
-                Process killerProc = killer.start();
+                killer.start();
                 process.destroy();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -82,15 +82,19 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         };
         executor.schedule(task, 1500, TimeUnit.SECONDS);
         //
-        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-        // Read console output
-        String line;
-        while (process.isAlive()) {
-            line = reader.readLine();
-            if (null != line) {
-                output.add(line);
+        //Try with resource
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+            // Read console output
+            String line;
+            while (process.isAlive()) {
+                line = reader.readLine();
+                if (null != line) {
+                    output.add(line);
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         executor.shutdownNow();
@@ -177,9 +181,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
      */
     private boolean writeToFile(String name, List<String> content) {
 
-        PrintWriter printer;
-
         File file = new File(new StringBuilder(OUT_URL).append(name).append(".txt").toString());
+
         try {
             file.getParentFile().mkdirs();
             if (!file.exists())
@@ -187,8 +190,8 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        try {
-            printer = new PrintWriter(file);
+
+        try (PrintWriter printer = new PrintWriter(file)) {
             for (String s : content)
                 printer.write(s + "\n");
             printer.close();
