@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         while (true) {
-            String[] params = new String[]{"-file", "src\\com\\hajoch\\params\\problem.params"};
+            String[] params = new String[]{"-file", "src\\com\\hajoch\\params\\competitiveProblem.params"};
 
             String checkpoint = getLatestCheckpoint();
             if (checkpoint.equals("")) {

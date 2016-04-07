@@ -1,0 +1,32 @@
+##INHERITANCE
+parent.0 				= general.params
+parent.1				= bt.params
+parent.2                = ecoBT.params
+#parent.2               = PTC2.params
+
+#==========Checkpointing==========
+checkpoint                              =       true
+checpoint-modulo                        =       1
+checkpoint-directory                    =       ..//checkpoints
+
+
+##SIMPLIFIED ENVIRONMENT
+pop.subpop.0.size 		= 2
+generations 			= 4
+
+#builder
+#gp.tc.0.init = ec.gp.koza.HalfBuilder
+#gp.tc.0.init.min-depth = 3
+#gp.tc.0.init.max-depth = 6
+#gp.koza.half.growp = 0.5
+
+evalthreads 			= 1
+
+eval =					ec.coevolve.CompetitiveEvaluator
+eval.style =				single-elim-tournament
+
+##PROBLEM
+eval.problem 			= com.hajoch.SpringProblemCompetitive
+
+pop.subpop.0.species.fitness =		ec.simple.SimpleFitness
+select.tournament.size = 2

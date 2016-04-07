@@ -172,6 +172,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         avgSizePerGen.add(avgSize);
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
         popForHumansPrinter.print("Average fitness: " + avgFitness + " Average size: " + avgSize);
+
         ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
