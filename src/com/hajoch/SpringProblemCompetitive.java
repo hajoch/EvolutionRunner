@@ -28,32 +28,39 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
     // Path to where the BehaviourTree individual and gameLog should be saved
     private final String OUT_URL = "out\\";
 
+
+    //clear trials
     @Override
     public void preprocessPopulation(EvolutionState evolutionState, Population population, boolean[] updateFitness, boolean countVictoriesOnly) {
-        if (updateFitness[0]) {
-            for (int i = 0; i < population.subpops[0].individuals.length; i++) {
-                ((SimpleFitness) (population.subpops[0].individuals[i].fitness)).trials = new ArrayList();
+        for (int i = 0; i < population.subpops.length; i++) {
+            if (updateFitness[i]) {
+                for (int j = 0; j < population.subpops[i].individuals.length; j++) {
+                    SimpleFitness fit = (SimpleFitness) (population.subpops[i].individuals[j].fitness);
+                    fit.trials = new ArrayList();
+                }
             }
         }
     }
 
     @Override
     public void postprocessPopulation(EvolutionState evolutionState, Population population, boolean[] updateFitness, boolean countVictoriesOnly) {
-        if (updateFitness[0]) {
-            for (int i = 0; i < population.subpops[0].individuals.length; i++) {
-                SimpleFitness fit = ((SimpleFitness) (population.subpops[0].individuals[i].fitness));
+        for(int i = 0; i < population.subpops.length; i++){
+            if (updateFitness[i]) {
+                for (int j = 0; j < population.subpops[i].individuals.length; j++) {
+                    SimpleFitness fit = (SimpleFitness) (population.subpops[i].individuals[j].fitness);
 
-                // average of the trials we got
-                int len = fit.trials.size();
-                double sum = 0;
-                for (int l = 0; l < len; l++)
-                    sum += ((Double) (fit.trials.get(l))).doubleValue();
-                sum /= len;
+                    if(!countVictoriesOnly) {
+                        //set fitness to average of trials
+                        int len = fit.trials.size();
+                        double sum = 0;
+                        for (int l = 0; l < len; l++) {
+                            sum += ((Double) (fit.trials.get(l))).doubleValue();
+                        }
 
-                fit.setFitness(evolutionState, sum, false);
-                population.subpops[0].individuals[i].evaluated = true;
-
-                fit.trials = null;
+                        fit.setFitness(evolutionState, sum / len, false);
+                    }
+                    population.subpops[i].individuals[j].evaluated = true;
+                }
             }
         }
     }
@@ -66,33 +73,119 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
         writeToFile("tree", Collections.singletonList(tree0));
         writeToFile("tree2", Collections.singletonList(tree1));
 
+        System.out.println(individuals[0].toString());
+        System.out.println("        VS");
+        System.out.println(individuals[1].toString());
+
+        int p0Wins = 0;
+        int p1Wins = 0;
+
         //This variable defines the amount of times the evaluation will be run
-        int p0Score = 0;
-        int p1Score = 0;
         int evalCounts = 3;
-        for(int e = 0; e < 3; e++){
-            if(getFitness() == 0)
-                p0Score += 1;
-            else if(getFitness() == 1)
-                p1Score += 1;
+        for (int e = 0; e < evalCounts; e++) {
+            int winner = getFitness();
+            if(winner == 0)
+                p0Wins++;
+            else if(winner == 1)
+                p1Wins++;
+
+            if(p0Wins == 2) {
+                SimpleFitness fit = ((SimpleFitness) (individuals[0].fitness));
+                fit.trials.add(new Double(1));
+                System.out.println("Player 0 wins");
+                break;
+            }
+            if(p1Wins == 2) {
+                SimpleFitness fit = ((SimpleFitness) (individuals[1].fitness));
+                fit.trials.add(new Double(1));
+                System.out.println("Player 1 wins");
+                break;
+            }
         }
 
-        if(p0Score == p1Score){
-            p0Score = 0;
-            p1Score = 0;
+        System.out.println(" ");
+    }
+
+    /**
+     * Run game, interpret results and return fitness.
+     * NB: This method is problem specific.
+     *
+     * @return fitness (Kozafirness)
+     */
+    private int getFitness() {
+        List<String> output = new ArrayList<>();
+
+        boolean running = true;
+        while (running) {
+            try {
+                output = runZerok();
+                running = false;
+            } catch (IOException e) {
+                System.out.println("zero K crashed. Restarting");
+            }
         }
 
+        // Write the console output to file
+        writeToFile("out" + START_TIME, output);
 
-        if(updateFitness[0]){
-            SimpleFitness fit = ((SimpleFitness) (individuals[0].fitness));
-            fit.trials.add(new Double(p0Score));
+        int winner = 3;
+        for (String s : output) {
+            if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
+                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
+            }
         }
 
-        if(updateFitness[1]){
-            SimpleFitness fit = ((SimpleFitness) (individuals[1].fitness));
-            fit.trials.add(new Double(p1Score));
+        if(winner == 0){
+            return 0;
+        } else if (winner == 1){
+            return 1;
+        } else {
+            double p0Fitness = getFitness(0, output);
+            double p1Fitness = getFitness(1, output);
+
+            if(p0Fitness > p1Fitness)
+                return 0;
+            else
+                return 1;
         }
     }
+
+    public double getFitness(int teamid, List<String> output) {
+        int winner = 0;
+        int time = 0;
+        double avgEco = 0;
+        int soldiers = 0;
+        double avgMex = 0;
+        double peakIncome = 0;
+        double killVsExpenditureMetal = 0;
+        for (String s : output) {
+            if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
+                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
+            }
+            if (s.contains("END") && (Integer.parseInt(s.substring(s.indexOf("teamId: ") + 8, s.indexOf(" time: "))) == teamid)) {
+                time = Integer.parseInt(s.substring(s.indexOf("time: ") + 6, s.indexOf(" Soldiers: ")));
+                //System.out.println("Time: " + time);
+                soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ") + 10, s.indexOf(" avgEco: ")));
+                //System.out.println("Soldiers: " + soldiers);
+                avgEco = Double.parseDouble(s.substring(s.indexOf("avgEco: ") + 8, s.indexOf("avgMex: ")));
+                //System.out.println("avgEco: " + avgEco);
+                avgMex = Double.parseDouble(s.substring(s.indexOf("avgMex: ") + 8, s.indexOf("peakIncome: ")));
+                peakIncome = Double.parseDouble(s.substring(s.indexOf("peakIncome: ") + 12, s.indexOf("killVsExpenditureMetal: ")));
+                killVsExpenditureMetal = Double.parseDouble(s.substring(s.indexOf("killVsExpenditureMetal: ") + 23, s.length()));
+            }
+        }
+
+        double ecoFitness = avgEco / 50d;
+        double fitness = (ecoFitness * 0.25d) + (avgMex * 0.1d) + (peakIncome * 0.05d) + (killVsExpenditureMetal * 0.10d);
+        if (winner == teamid) {
+            fitness += 0.5d;
+            //System.out.println("We won" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+        } else {
+            //System.out.println("We lost" + " Time: " + time + " avgEco: " + avgEco + " Soldiers: " + soldiers + " avgMex: " + avgMex + " peakIncome: " + peakIncome + " killVsExpenditureMetal: " + killVsExpenditureMetal);
+        }
+        return 1d - fitness;
+    }
+
 
     // Start game from  commandline using our custom script.
     public List<String> runZerok() throws IOException {
@@ -120,7 +213,7 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
                 e.printStackTrace();
             }
         };
-        executor.schedule(task, 180, TimeUnit.SECONDS);
+        executor.schedule(task, 90, TimeUnit.SECONDS);
         //
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             // Read console output
@@ -137,35 +230,6 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
 
         executor.shutdownNow();
         return output;
-    }
-
-    /**
-     * Run game, interpret results and return fitness.
-     * NB: This method is problem specific.
-     *
-     * @return fitness (Kozafirness)
-     */
-    private int getFitness() {
-        List<String> output = new ArrayList<>();
-
-        boolean running = true;
-        while (running) {
-            try {
-                output = runZerok();
-                running = false;
-            } catch (IOException e) {
-                System.out.println("zero K crashed. Restarting");
-            }
-        }
-
-        // Write the console output to file
-        writeToFile("out" + START_TIME, output);
-
-        for (String s : output) {
-            if (s.contains("game_message: Alliance ") && s.contains("wins!"))
-                return Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
-        }
-        return 3;
     }
 
 

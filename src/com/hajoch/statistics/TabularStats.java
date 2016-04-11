@@ -152,7 +152,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
                     (best_i[x].evaluated ? " " : " (evaluated flag not set): ") +
                     best_i[x].fitness.fitnessToStringForHumans());
             //TODO
-            bestInds.add(1d - ((KozaFitness) best_i[x].fitness).standardizedFitness());
+            bestInds.add(1d - (best_i[x].fitness).fitness());
 
             // describe the winner if there is a description
             if (state.evaluator.p_problem instanceof SimpleProblemForm)
@@ -162,7 +162,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         double avgFitness = 0;
         double avgSize = 0;
         for (Individual ind : state.population.subpops[0].individuals) {
-            avgFitness += ((KozaFitness) ind.fitness).standardizedFitness();
+            avgFitness += ( ind.fitness).fitness();
             avgSize += ind.size();
             setNodeCount(((GPIndividual) ind).trees[0].child);
         }
@@ -173,18 +173,19 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         state.output.message("Average fitness: " + avgFitness + " Average size: " + avgSize);
         popForHumansPrinter.print("Average fitness: " + avgFitness + " Average size: " + avgSize);
 
-        ResultsSingleton.setNodeOcc(nodeUsage);
+
+/*        ResultsSingleton.setNodeOcc(nodeUsage);
         ResultsSingleton.setAvgFitness(avgFitnessPerGen);
         ResultsSingleton.setAvgSize(avgSizePerGen);
         ResultsSingleton.setBestInds(bestInds);
-        ResultsSingleton.drawChart(runName, false);
+        ResultsSingleton.drawChart(runName, false);*/
         writePopulation(state.population.subpops[0].individuals, state);
     }
 
     public void writePopulation(Individual[] pop, EvolutionState state) {
         popForHumansPrinter.print("\r\n Generation " + state.generation + "\r\n");
         for (int i = 0; i < pop.length; i++) {
-            popForHumansPrinter.print(i + " " + getTree(((GPIndividual) pop[i]).trees[0].child).replace(" ", "") + " " + ((KozaFitness) pop[i].fitness).standardizedFitness() + "\r\n");
+            popForHumansPrinter.print(i + " " + getTree(((GPIndividual) pop[i]).trees[0].child).replace(" ", "") + " " + pop[i].fitness.fitness() + "\r\n");
             pop[0].printIndividual(state, popForECJPrinter);
         }
     }
@@ -216,7 +217,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
                 ((SimpleProblemForm) (state.evaluator.p_problem.clone())).describe(state, best_of_run[x], x, 0, statisticslog);
         }
 
-        ResultsSingleton.drawChart(runName, true);
+        //ResultsSingleton.drawChart(runName, true);
         popForHumansPrinter.close();
         popForECJPrinter.close();
 
