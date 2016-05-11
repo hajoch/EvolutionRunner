@@ -6,6 +6,7 @@ import ec.Population;
 import ec.Problem;
 import ec.coevolve.GroupedProblemForm;
 import ec.gp.GPIndividual;
+import ec.gp.koza.KozaFitness;
 import ec.simple.SimpleFitness;
 
 import java.io.*;
@@ -57,7 +58,7 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
                             sum += ((Double) (fit.trials.get(l))).doubleValue();
                         }
 
-                        fit.setFitness(evolutionState, sum / len, false);
+                        //fit.setFitness(evolutionState, sum / len, false);
                     }
                     population.subpops[i].individuals[j].evaluated = true;
                 }
@@ -70,24 +71,73 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
         String tree0 = ((GPIndividual) individuals[0]).trees[0].child.toString();
         String tree1 = ((GPIndividual) individuals[1]).trees[0].child.toString();
 
+        //e3
+        //tree0 = "randomSelector[buildSolar, buildMex, randomSelector[buildSolar, buildMex, repairUnit]]";
+        //largepop
+        //tree1 = "sequence[succeeder(randomSelector[randomSelector[highMetal,buildMex,highEnergy],buildSolar,inverter(highMetal)]),sequence[topOfHill,untilFail(selector[sequence[topOfHill,highTension,lowMetal,highMetal],sequence[topOfHill,sequence[inverter(highEnergy),highMetal,highEnergy,selector[isAreaControlled,topOfHill],repairUnit],lowMetal,highMetal]]),randomSelector[topOfHill,selector[sequence[topOfHill,highTension,untilFail(sequence[topOfHill,highMetal,highEnergy,lowHealth,repairUnit]),highMetal],sequence[topOfHill,inverter(highEnergy),lowMetal,highMetal]],selector[succeeder(inverter(highEnergy)),untilFail(sequence[topOfHill,highMetal,highEnergy,inverter(highEnergy),repairUnit])]],sequence[lowMetal,succeeder(untilFail(inverter(lowMetal))),topOfHill,highMetal],topOfHill],succeeder(untilFail(sequence[topOfHill,highMetal,highEnergy,inverter(highEnergy),repairUnit]))]";
+
         writeToFile("tree", Collections.singletonList(tree0));
         writeToFile("tree2", Collections.singletonList(tree1));
+
 
         System.out.println(individuals[0].toString());
         System.out.println("        VS");
         System.out.println(individuals[1].toString());
 
         int p0Wins = 0;
+        double p0Fitness = 0;
+        double avgp0Fitness = 0;
         int p1Wins = 0;
-
+        double p1Fitness = 0;
+        double avgp1Fitness = 0;
         //This variable defines the amount of times the evaluation will be run
         int evalCounts = 3;
-        for (int e = 0; e < evalCounts; e++) {
-            int winner = getFitness();
-            if(winner == 0)
+
+        //Long startTime = System.nanoTime();
+        double f = 0;
+        //This variable defines the amount of times the evaluation will be run
+/*        for (int e = 0; e < evalCounts; e++) {
+            List<String>output = getFitness();
+            p0Fitness = getFitness(0, output);
+            p1Fitness = getFitness(1, output);
+            avgp0Fitness += p0Fitness;
+            avgp1Fitness += p1Fitness;
+
+            System.out.println("p0fitness = " + p0Fitness);
+            System.out.println("p1Fitness = " + p1Fitness);
+            System.out.println();
+            if (p0Fitness < 0.5)
                 p0Wins++;
-            else if(winner == 1)
+            else if(p1Fitness < 0.5)
                 p1Wins++;
+            else{
+                if (p0Fitness < p1Fitness)
+                    p0Wins++;
+                else
+                    p1Wins++;
+
+            }
+        }
+
+        System.out.println("p0wins = " + p0Wins);
+        System.out.println("p1wins = " + p1Wins);
+        System.out.println("avgp0Fitness = " + avgp0Fitness / evalCounts);
+        System.out.println("avgp1Fitness = " + avgp1Fitness/evalCounts);*/
+        for (int e = 0; e < evalCounts; e++) {
+            List<String>output = getFitness();
+            p0Fitness = getFitness(0, output);
+            p1Fitness = getFitness(1, output);
+            if (p0Fitness > 0.5)
+                p0Wins++;
+            else if(p1Fitness < 0.5)
+                p1Wins++;
+            else{
+                if (p0Fitness > p1Fitness)
+                    p0Wins++;
+                else
+                    p1Wins++;
+
+            }
 
             if(p0Wins == 2) {
                 SimpleFitness fit = ((SimpleFitness) (individuals[0].fitness));
@@ -112,7 +162,7 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
      *
      * @return fitness (Kozafirness)
      */
-    private int getFitness() {
+    private List<String> getFitness() {
         List<String> output = new ArrayList<>();
 
         boolean running = true;
@@ -127,27 +177,7 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
 
         // Write the console output to file
         writeToFile("out" + START_TIME, output);
-
-        int winner = 3;
-        for (String s : output) {
-            if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
-                winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
-            }
-        }
-
-        if(winner == 0){
-            return 0;
-        } else if (winner == 1){
-            return 1;
-        } else {
-            double p0Fitness = getFitness(0, output);
-            double p1Fitness = getFitness(1, output);
-
-            if(p0Fitness > p1Fitness)
-                return 0;
-            else
-                return 1;
-        }
+        return output;
     }
 
     public double getFitness(int teamid, List<String> output) {
@@ -213,7 +243,7 @@ public class SpringProblemCompetitive extends Problem implements GroupedProblemF
                 e.printStackTrace();
             }
         };
-        executor.schedule(task, 90, TimeUnit.SECONDS);
+        executor.schedule(task, 120, TimeUnit.SECONDS);
         //
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
             // Read console output

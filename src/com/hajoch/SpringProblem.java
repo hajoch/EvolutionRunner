@@ -30,6 +30,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
     private final String SCRIPT_URL = "src\\com\\hajoch\\script";
     // Path to where the BehaviourTree individual and gameLog should be saved
     private final String OUT_URL = "out\\";
+    private static int victoryCounter = 0;
 
     /**
      * @param evolutionState evolutionstate.
@@ -42,19 +43,27 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         if (!individual.evaluated) {
             BooleanData input = (BooleanData) this.input;
             String treeString = (((GPIndividual) individual).trees[0].child).toString();
+
+            //lowmut
+           //String tree0 =  "randomSelector[buildSolar, buildMex, randomSelector[buildSolar, buildMex, repairUnit]]";
             // Write BT individual to text file for the Spring Bot to read and parse
             writeToFile("tree", Collections.singletonList(treeString));
-
-            //Long startTime = System.nanoTime();
+           //Long startTime = System.nanoTime();
             double f = 0;
             //This variable defines the amount of times the evaluation will be run
-            int evalCounts = 2;
-            for(int e = 0; e < 2; e++)
-                f += getFitness();
+            int evalCounts = 100;
+            for (int e = 0; e < evalCounts; e++) {
+                double fitness = getFitness();
+                System.out.println("fitness = " + fitness);
+                if (fitness < 0.5)
+                    victoryCounter++;
+                f += fitness;
+            }
 
-            f = f/evalCounts;
+            System.out.println("win ratio = " + victoryCounter + "/100");
+            f = f / evalCounts;
 
-            System.out.println("Fitness = " + f);
+            System.out.println("avg Fitness = " + f);
             KozaFitness fitness = (KozaFitness) individual.fitness;
             fitness.setStandardizedFitness(evolutionState, f);
             individual.evaluated = true;
@@ -128,8 +137,11 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
         // Write the console output to file
         writeToFile("out" + START_TIME, output);
 
+        return getFitness(0, output);
+    }
+
+    public double getFitness(int teamid, List<String> output) {
         int winner = 0;
-        int teamid = 1;
         int time = 0;
         double avgEco = 0;
         int soldiers = 0;
@@ -140,9 +152,7 @@ public class SpringProblem extends GPProblem implements SimpleProblemForm {
             if (s.contains("game_message: Alliance ") && s.contains("wins!")) {
                 winner = Integer.parseInt(s.substring(s.indexOf("Alliance ") + 9, s.indexOf(" wins!")));
             }
-            if (s.contains("END")) {
-                teamid = Integer.parseInt(s.substring(s.indexOf("teamId: ") + 8, s.indexOf(" time: ")));
-                //System.out.println("Teamid: " + teamid);
+            if (s.contains("END") && (Integer.parseInt(s.substring(s.indexOf("teamId: ") + 8, s.indexOf(" time: "))) == teamid)) {
                 time = Integer.parseInt(s.substring(s.indexOf("time: ") + 6, s.indexOf(" Soldiers: ")));
                 //System.out.println("Time: " + time);
                 soldiers = Integer.parseInt(s.substring(s.indexOf("Soldiers: ") + 10, s.indexOf(" avgEco: ")));

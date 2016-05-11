@@ -1,0 +1,23 @@
+##INHERITANCE
+parent.0 				= general.params
+parent.1				= bt.params
+parent.2                = ecoBT.params
+
+#==========Checkpointing==========
+checkpoint                              =       true
+checpoint-modulo                        =       1
+checkpoint-directory                    =       ..//checkpoints
+
+
+##SIMPLIFIED ENVIRONMENT
+pop.subpop.0.size 		= 5
+generations 			= 50
+
+
+
+evalthreads 			= 1
+
+##PROBLEM
+eval.problem 			= com.hajoch.SpringProblem
+pop.subpop.0.species.ind                =       com.hajoch.HackyGPIndividual
+#pop.subpop.0.file       = pop.in

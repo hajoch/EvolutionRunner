@@ -1,26 +1,25 @@
 package com.hajoch.statistics;
 
 import com.hajoch.Utility;
-import ec.*;
+import ec.EvolutionState;
+import ec.Individual;
+import ec.Statistics;
 import ec.gp.GPIndividual;
 import ec.gp.GPNode;
-import ec.gp.koza.KozaFitness;
 import ec.simple.SimpleProblemForm;
 import ec.steadystate.SteadyStateStatisticsForm;
 import ec.util.Parameter;
 
 import java.io.*;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Created by Jonatan on 18-Sep-15.
+ * Created by Jonatan on 11-May-16.
  */
+public class CompetitiveTabularStats extends Statistics implements SteadyStateStatisticsForm {
 
-
-public class TabularStats extends Statistics implements SteadyStateStatisticsForm {
     public Individual[] getBestSoFar() {
         return best_of_run;
     }
@@ -98,11 +97,12 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
      */
     boolean warned = false;
 
-    public void setNodeCount(GPNode node){
-        String nodeName = node.toString().replaceAll("[^a-zA-Z]", " ");;
+    public void setNodeCount(GPNode node) {
+        String nodeName = node.toString().replaceAll("[^a-zA-Z]", " ");
+        ;
         String arr[] = nodeName.split(" ");
-        for(String s: arr){
-            if(s.length() > 1)
+        for (String s : arr) {
+            if (s.length() > 1)
                 nodeUsage.put(s, nodeUsage.get(s) != null ? nodeUsage.get(s) + 1 : 1);
         }
     }
@@ -176,7 +176,7 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         double avgFitness = 0;
         double avgSize = 0;
         for (Individual ind : state.population.subpops[0].individuals) {
-            avgFitness += ( ind.fitness).fitness();
+            avgFitness += (ind.fitness).fitness();
             avgSize += ind.size();
             setNodeCount(((GPIndividual) ind).trees[0].child);
         }
@@ -239,3 +239,4 @@ public class TabularStats extends Statistics implements SteadyStateStatisticsFor
         Utility.archiveCheckpoints(".\\runs\\" + runName + "\\checkpoints");
     }
 }
+
